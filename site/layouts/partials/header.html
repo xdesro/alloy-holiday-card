@@ -6,5 +6,6 @@
     <base href="{{ $.Site.BaseURL }}">
     <title>{{ $.Site.Title }}</title>
     <link rel="stylesheet" href="css/main.css"/>
+    {{ if and ($.IsNode) (eq $.Section "") }} <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>{{ end }}
   </head>
   <body>

@@ -1,3 +1,16 @@
   <script src="app.js"></script>
+  {{ if and ($.IsNode) (eq $.Section "") }}
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  {{ end }}
   </body>
 </html>
