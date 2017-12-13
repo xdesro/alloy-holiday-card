@@ -1,9 +1,19 @@
 {{ partial "header" . }}
+{{ partial "intro" . }}
+<div class="container">
+  {{ partial "navigation" . }}
+  <div class="recipes-column"> 
+    {{ range .Data.Pages }}
+      {{ .Render "recipe" }}
+    {{ end }}
+  </div>
+</div>
 
-<h1>Hugo with Gulp, PostCSS and Webpack</h1>
 
-<p>
-  Hooray 🎉 - you've built this with <a href="https://github.com/netlify/victor-hugo">Victor-Hugo</a>!
-</p>
+<div class="background-wrapper">
+  <div class="mountains"></div>
+</div>
+<div class="snow-container"></div>
+
 
 {{ partial "footer" . }}

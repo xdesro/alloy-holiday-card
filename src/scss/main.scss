@@ -1,0 +1,91 @@
+@import "vendor/reset";
+
+@import "partials/fonts";
+@import "partials/variables";
+@import "partials/typography";
+
+@import "components/navigation";
+@import "components/recipe";
+
+body::-webkit-scrollbar { 
+  display: none; 
+}
+
+body{
+  font-family: sans-serif;
+  font-size: 1em;
+  min-height: 100vh;
+}
+.intro {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background: transparentize($downriver, .25);
+  * {
+    z-index: 3;
+    position: relative;
+  }
+  .logo {
+    max-width: 200px;
+    margin: 0 auto 40px;
+    height: 100px;
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+  h1 {
+    margin: 0 auto;
+    max-width: 30vw;
+  }
+  .divider {
+    background: $sienna;
+    height: 5px;
+    width: 5vw;
+    margin: 30px auto 40px;
+  }
+  .intro-text {
+    font-size: 20px;
+    max-width: 30vw;
+    line-height: 1.5;
+  }
+}
+.background-wrapper {
+  transform: scaleX(-1);     
+  height: 100vh;
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100vw;
+  background-image: url('/img/background-comp.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.snow-container {
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 2;
+  opacity:.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: "nav recipe";
+  grid-template-columns: 200px auto;
+}
+.navigation {
+  grid-area: nav;
+}
+.recipes-column {
+  grid-area: recipe;
+}

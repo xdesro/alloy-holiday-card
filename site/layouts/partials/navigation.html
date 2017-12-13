@@ -1,0 +1,7 @@
+<div class="navigation">
+    <ul class="nav">
+        {{ range .Pages }}
+        <li>{{ .Params.first }}</li>
+        {{ end }}
+    </ul>
+</div>

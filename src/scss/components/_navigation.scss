@@ -1,0 +1,47 @@
+.navigation {
+    // position: fixed;
+    // position: relative;
+    position: sticky;
+    top:0;
+    height: 100vh;
+    z-index: 2;
+    overflow:hidden;
+    border-right: 2px solid white;
+    &:before {
+        display: block;
+        content: url('/img/alloy-logo.svg');
+        width: 150px;
+        height: 100px;
+        padding-right: 20px;
+        padding-top: 50px;
+    }
+    .nav {
+        overflow-y:scroll;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        padding-right: 50px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        li {
+            margin-bottom: 50px;
+            font-size: 13px;
+            position: relative;
+            display: block;
+            box-sizing: border-box;
+            &.active {
+                &:after {
+                    content: "";
+                    border-radius: 100%;
+                    border: 2px solid white;
+                    width: 40px;
+                    height: 40px;
+                    transform: translateY(-50%);
+                    top: 50%;
+                    right: -140%;
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
