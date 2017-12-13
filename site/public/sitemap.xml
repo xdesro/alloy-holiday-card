@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/recipes/anna-cook/</loc>
+  </url>
+  
+  <url>
+    <loc>/recipes/david-millsaps/</loc>
+  </url>
+  
+  <url>
+    <loc>/recipes/derek-adams/</loc>
+  </url>
+  
+  <url>
+    <loc>/recipes/hannah-suttle/</loc>
+  </url>
+  
+  <url>
+    <loc>/recipes/henry-dessroches/</loc>
+  </url>
+  
+  <url>
+    <loc>/recipes/kerri-howell/</loc>
+  </url>
+  
+  <url>
+    <loc>/recipes/kristie-wallis/</loc>
+  </url>
+  
+  <url>
+    <loc>/recipes/matt-moen/</loc>
+  </url>
+  
+  <url>
+    <loc>/recipes/megan-kilpatrick/</loc>
+  </url>
+  
+  <url>
+    <loc>/recipes/sarah-shelness/</loc>
+  </url>
+  
+  <url>
+    <loc>/recipes/stephon-beaufort/</loc>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/recipes/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

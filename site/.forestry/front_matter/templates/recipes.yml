@@ -1,0 +1,33 @@
+---
+hide_body: false
+fields:
+- name: first
+  label: First
+  type: text
+  hidden: false
+  default: ''
+- name: last
+  label: Last
+  type: text
+  hidden: false
+  default: ''
+- name: recipe
+  label: Recipe
+  type: text
+  hidden: false
+  default: ''
+- name: description
+  label: Description
+  type: textarea
+  hidden: false
+  default: ''
+- name: title
+  label: Title
+  type: text
+  hidden: false
+  default: ''
+- name: type
+  label: Type
+  type: text
+  hidden: false
+  default: ''
