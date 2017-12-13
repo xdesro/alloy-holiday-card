@@ -1,7 +1,9 @@
 <div class="navigation">
+    <div class="nav-logo"></div>
+    <div class="beacon"><div class="dot"></div></div>
     <ul class="nav">
         {{ range .Pages }}
-        <li>{{ .Params.first }}</li>
+        <li data-target="#{{ lower .Params.first }}">{{ .Params.first }}</li>
         {{ end }}
     </ul>
 </div>

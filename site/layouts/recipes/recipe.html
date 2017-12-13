@@ -1,4 +1,4 @@
-<div class="section">
+<div class="section" id="{{ lower .Params.first }}">
   <div class="card">
     <div class="info">
       <div class="name">
@@ -17,5 +17,6 @@
     <div class="recipe">
       {{ .Content }}
     </div>
+    <div class="card-background"></div>
   </div>
 </div>

@@ -1,13 +1,13 @@
+:root {
+    --dot: $sienna;
+}
 .navigation {
-    // position: fixed;
-    // position: relative;
     position: sticky;
     top:0;
     height: 100vh;
-    z-index: 2;
-    overflow:hidden;
-    border-right: 2px solid white;
-    &:before {
+    z-index: 3;
+    // border-right: 2px solid white;
+    .nav-logo {
         display: block;
         content: url('/img/alloy-logo.svg');
         width: 150px;
@@ -15,8 +15,64 @@
         padding-right: 20px;
         padding-top: 50px;
     }
+    .beacon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) translateX(100%);
+        // height: 50px;
+        height: 100%;
+        // border: 2px solid white;
+        width: 50px;
+        right: 0;
+        border-radius: 100%;
+        z-index: 4;
+        display:grid;
+        box-sizing: border-box;
+        grid-template-areas: 
+            "top-line"
+            "dot"
+            "bottom-line";
+        grid-template-rows: auto 50px auto;
+        &:before, &:after { 
+            content: "";
+            // grid-area:line;
+            background: white;
+            width: 2px;
+            height: 100%;
+            display: block;
+        }
+        &:before {
+            grid-area: top-line;
+        }
+        &:after {
+            grid-area: bottom-line;
+        }
+        .dot {
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            border-radius: 100%;
+            border: 2px solid white;
+            grid-area: dot;
+            margin-left: 1px;
+            transform: translateX(-50%);
+            &:before {
+                background: var(--dot);
+                height: 50%;
+                width: 50%;
+                transition: all .2s ease;
+                content:"";
+                display: block;
+                border-radius: 100%;
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+    }
     .nav {
-        overflow-y:scroll;
+        -webkit-mask-image: -webkit-gradient(linear, to bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
         position: absolute;
         top: 50%;
         right: 0;
@@ -25,22 +81,22 @@
         letter-spacing: 1px;
         li {
             margin-bottom: 50px;
+            cursor: pointer;
             font-size: 13px;
             position: relative;
             display: block;
             box-sizing: border-box;
+            transform: scale(1);
+            transition: all .1s linear;
             &.active {
-                color: red;
+                transform: scale(1.2);
                 &:after {
-                    content: "";
-                    border-radius: 100%;
-                    border: 2px solid white;
-                    width: 40px;
-                    height: 40px;
-                    transform: translateY(-50%);
+                    position: fixed;
                     top: 50%;
-                    right: -140%;
-                    position: absolute;
+                    width: 50px;
+                    height: 50px;
+                    background: $sienna;
+                    border-radius: 100%;
                 }
             }
         }

@@ -58,7 +58,6 @@ body{
   }
 }
 .background-wrapper {
-  transform: scaleX(-1);     
   height: 100vh;
   position: fixed;
   top:0;
@@ -67,6 +66,15 @@ body{
   background-image: url('/img/background-comp.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  &:before {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: transparentize($downriver, .5);
+  }
 }
 
 .snow-container {
