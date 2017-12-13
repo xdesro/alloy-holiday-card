@@ -1,6 +1,33 @@
 import $ from "jquery";
-import ScrollMagic from "scrollmagic";
 import Anime from "animejs";
+import AOS from 'aos';
+
+AOS.init({
+    duration: 1000,
+    easing: 'ease-in-sine',
+    offset: 500
+});
+
+let windowHeight = $(window).height();
+
+const sections = document.getElementsByClassName('section');
+const navItems = $('.nav li');
+
+$(document).ready(function() {
+    $(sections).each(function(i) {
+        $(this).attr('data-aos','fade-up');
+    })
+}) 
+// 'transform', 'translateY(' + (i * 10 + 30) + ')'
+// sections.forEach(function(el) {
+//     console.log(el, this);
+//     new ScrollMagic.Scene({
+//           duration: windowHeight,
+//           triggerElement: this
+//         })
+//         .setClassToggle(this, "active")
+//         .addTo(controller);
+// })
 
 // $('.card').translucent('blur', 20);
 // const cardHeight = $(".card")[0].scrollHeight;
@@ -137,6 +164,7 @@ import Anime from "animejs";
   snowContainer.appendChild(canvas);
 })();
 
+// Console Easter Egg
 const consoleStyles = [
   "background: linear-gradient(135deg, #E9625A 0%,#0A204C 100%);",
   "color: white",

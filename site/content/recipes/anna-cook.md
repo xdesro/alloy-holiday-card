@@ -1,7 +1,7 @@
 {
     "first": "Anna",
     "last": "Cook",
-    "recipe": "",
+    "recipe": "Grandma Otte’s Texas Sheet Cake",
     "description": "I come from a farming community in Alva, Oklahoma. My family has had our farm for over 100 years, so we celebrate tradition, family, and good harvests. Our holidays are filled with lots of simple, shareable, comfort foods. There are so many that I loved: fried chicken, dilly bread, chocolate fudge, and so on, but this Texas sheet cake was special because my great grandma, Dorothy Otte, would make it. Here’s to her!"
 }
 
@@ -16,7 +16,7 @@
 <li>1 ½ tsp baking soda</li>
 <li>1 tsp vanilla</li>
 </ul>
-For Frosting
+<p>For Frosting</p>
 <ul>
 <li>1 stick butter</li>
 <li>4 tbsp cocoa</li>

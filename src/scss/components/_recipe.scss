@@ -21,6 +21,24 @@
     }
   }
 
+  .scrollmagic-pin-spacer {
+    &:nth-child(3n+1) {
+        .name p {
+            background: #E9625A;
+        }
+    }
+    &:nth-child(3n+2) {
+        .name p {
+            background: #E8945B;
+        }
+    }
+    &:nth-child(3n+3) {
+        .name p {
+            background: #D8BD4A;
+        }
+    }
+  }
+
 .card {
     position: relative;
     background: transparentize($downriver, 0.25);
@@ -80,7 +98,7 @@
         column-rule: 1px outset white;
         max-height: 60vh;
         > div {
-            break-inside: avoid;
+            // break-inside: avoid;
         }
         h3 {
             font-size: 21px;

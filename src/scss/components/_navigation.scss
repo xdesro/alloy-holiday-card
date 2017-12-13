@@ -30,6 +30,7 @@
             display: block;
             box-sizing: border-box;
             &.active {
+                color: red;
                 &:after {
                     content: "";
                     border-radius: 100%;
