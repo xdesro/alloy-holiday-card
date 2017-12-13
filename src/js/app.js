@@ -13,11 +13,11 @@ let windowHeight = $(window).height();
 const sections = document.getElementsByClassName('section');
 const navItems = $('.nav li');
 
-$(document).ready(function() {
-    $(sections).each(function(i) {
-        $(this).attr('data-aos','fade-up');
-    })
-}) 
+// $(document).ready(function() {
+    // $(sections).each(function(i) {
+    //     $(this).attr('data-aos','fade-up');
+    // })
+// }) 
 // 'transform', 'translateY(' + (i * 10 + 30) + ')'
 // sections.forEach(function(el) {
 //     console.log(el, this);
