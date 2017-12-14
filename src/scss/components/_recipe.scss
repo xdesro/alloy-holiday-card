@@ -1,120 +1,136 @@
 .section {
-    padding: 100px 0 100px 150px;
-    box-sizing: border-box;
-    height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    z-index: 3;
-    &:nth-child(3n+1) {
-        .name p {
-            background: #E9625A;
-        }
+  padding: 100px 0 100px 150px;
+  box-sizing: border-box;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 3;
+  &:nth-child(3n + 1) {
+    .name p {
+      background: $sienna;
     }
-    &:nth-child(3n+2) {
-        .name p {
-            background: #E8945B;
-        }
-    }
-    &:nth-child(3n+3) {
-        .name p {
-            background: #D8BD4A;
-        }
+    .social .icon svg {
+        fill: $sienna;
     }
   }
+  &:nth-child(3n + 2) {
+    .name p {
+      background: $apricot;
+    }
+    .social .icon svg {
+        fill: $apricot;
+    }
+  }
+  &:nth-child(3n + 3) {
+    .name p {
+      background: $anzac;
+    }
+    .social .icon svg {
+        fill: $anzac;
+    }
+  }
+}
 
 .card {
-    position: relative;
-    background: transparentize($downriver, 0.5);
-    padding:  20px 50px 50px;
-    display: grid;
-    grid-template-areas: 
-        "info story"
-        "info recipe";
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 220px auto;
-    box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
-    &:before {
-        background: transparentize(#fff, .93);
-        content: "";
-        position: absolute;
-        top:0;
-        left:0;
-        right:0;
-        bottom: 0;
-        z-index: -1;
+  position: relative;
+  background: transparentize($downriver, 0.5);
+  padding: 20px 50px 50px;
+  display: grid;
+  grid-template-areas:
+    "info story"
+    "info recipe";
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 220px auto;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  &:before {
+    background: transparentize(#fff, 0.93);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  .card-background {
+    content: "";
+    background-image: url(/img/background-comp.svg);
+    filter: blur(5px);
+    background-attachment: fixed;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -2;
+    clip-path: inset(5.5px 5px 5px 5px);
+  }
+  .info {
+    grid-area: info;
+    transform: translateX(-50%);
+  }
+  .name {
+    margin-top: 50px;
+    grid-area: title;
+    p {
+      font-weight: 900;
+      font-family: $serif;
+      font-size: 56px;
+      line-height: 1.45;
+      display: inline;
+      padding: 10px 10px 5px 10px;
     }
-    .card-background {
-        content:"";
-        background-image: url(/img/background-comp.svg);
-        filter:blur(5px);
-        background-attachment: fixed;
-        position: absolute;
-        top:-5px;
-        left:-5px;
-        right:-5px;
-        bottom:-5px;
-        z-index: -2;
-        // clip-path: rect(0,100%,100%,0);
-        clip-path: inset(5px 5px 5px 5px)
+  }
+  .profile-img {
+    margin-top: 50px;
+    grid-area: image;
+    img {
+      height: 200px;
     }
-    .info {
-        grid-area: info;
-        transform: translateX(-50%);
+  }
+  .story {
+    grid-area: story;
+    h1 {
+      font-size: 27px;
+      font-weight: bold;
+      line-height: 40px;
     }
-    .name {
-        margin-top: 50px;
-        grid-area: title;
-        p {
-            font-weight: 900;
-            font-family: $serif;
-            font-size: 56px;
-            line-height: 1.45;
-            display: inline;
-            padding: 10px 10px 5px 10px;
-        }
+    p {
+      line-height: 1.5;
     }
-    .profile-img {
-        margin-top: 50px;
-        grid-area: image;
-        img {
-            height: 200px;
-
-        }
+  }
+  .recipe {
+    background: $downriver;
+    overflow-y: scroll;
+    margin-top: 20px;
+    margin-right: -10vmin;
+    padding: 30px;
+    columns: 2;
+    column-gap: 50px;
+    column-rule: 1px outset transparentize(white, 0.8);
+    max-height: 60vh;
+    h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
     }
-    .story {
-        grid-area: story;
-        h1 {
-            font-size: 27px;
-            font-weight: bold;
-            line-height: 40px;
-        }
-        p {
-            line-height: 1.5;
-        }
+    ul {
+      margin-bottom: 20px;
     }
-    .recipe {
-        background: $downriver;
-        // position: absolute;
-        // top: 20vmin;
-        // left: 20vmin;
-        overflow-y: scroll;
-        margin-top: 20px;
-        margin-right: -10vmin;
-        padding: 30px;
-        columns: 2;
-        column-gap: 50px;
-        column-rule: 1px outset white;
-        max-height: 60vh;
-        > div {
-            // break-inside: avoid;
-        }
-        h3 {
-            font-size: 21px;
-            margin-bottom: 10px;
-        }
-        ul {
-            margin-bottom:20px;
-        }
-    }
+  }
+  .social {
+      position: absolute;
+      right:0;
+      top: 20px;
+      padding: 10px;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 12px;
+      transform: translateX(100%);
+      letter-spacing: 1px;
+      background: $downriver;
+      a {
+          text-decoration: none;
+      }
+  }
 }

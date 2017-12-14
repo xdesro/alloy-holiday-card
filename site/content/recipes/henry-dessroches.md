@@ -2,7 +2,7 @@
     "first": "Henry",
     "last": "Desroches",
     "recipe": "Caraway & Maple Brussels Sprouts",
-    "description": ""
+    "description": "To be fair, you have to have a very high IQ to understand Rick and Morty. The humour is extremely subtle, and without a solid grasp of theoretical physics most of the jokes will go over a typical viewer’s head. There’s also Rick’s nihilistic outlook, which is deftly woven into his characterisation- his personal philosophy draws heavily from Narodnaya Volya literature, for instance. The fans understand this stuff; they have the intellectual capacity to truly appreciate the depths of these jokes, to realise that they’re not just funny- they say something deep about LIFE."
 }
 
 <div class="ingredients">
