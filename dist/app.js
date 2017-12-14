@@ -150,7 +150,7 @@ function onScroll(e) {
 (
 // Snowflake
 function () {
-  var SNOW_COUNT = 300;
+  var SNOW_COUNT = 100;
 
   var snowContainer = document.querySelector(".snow-container");
 

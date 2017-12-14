@@ -24,7 +24,7 @@
 <li>Boil and mash white sweet potatoes.</li>
 <li>Melt 1 stick of margarine in bowl.</li>
 <li>Add sugar and eggs, and mix together until creamy (best done with an electric mixer).</li>
-<li>Add 2 heaping tbsp of flour, 1 cup of white sweet potatoes<./li>
+<li>Add 2 heaping tbsp of flour, 1 cup of white sweet potatoes</li>
 <li>Add 2 or 3 tsps of vanilla, cinnamon and allspice to taste, and mix together.</li>
 <li>Pour into a pie crust and bake in a 350º F (175º C) oven. Bake until pie firms and is golden brown or looks done.</li>
         </ol>

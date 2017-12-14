@@ -74,7 +74,7 @@ $("#scroll-indicator").on("click", function() {
 (
   // Snowflake
   () => {
-    const SNOW_COUNT = 300;
+    const SNOW_COUNT = 100;
 
     const snowContainer = document.querySelector(".snow-container");
 

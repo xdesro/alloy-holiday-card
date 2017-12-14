@@ -6,22 +6,22 @@
   display: flex;
   align-items: center;
   z-index: 3;
-  .card {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  &.active {
-    position: sticky;
-    + .section {
-      .card {
-        opacity: 0.5;
-      }
-    }
-    .card {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
+  // .card {
+  //   opacity: 0;
+  //   transform: translateY(20px);
+  // }
+  // &.active {
+  //   position: sticky;
+  //   + .section {
+  //     .card {
+  //       opacity: 0.5;
+  //     }
+  //   }
+  //   .card {
+  //     transform: translateY(0);
+  //     opacity: 1;
+  //   }
+  // }
   &:nth-child(3n + 1) {
     .name p {
       background: $sienna;

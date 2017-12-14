@@ -218,19 +218,6 @@ ol {
   -ms-flex-align: center;
   align-items: center;
   z-index: 3; }
-  .section .card {
-    opacity: 0;
-    -webkit-transform: translateY(20px);
-    transform: translateY(20px); }
-  .section.active {
-    position: -webkit-sticky;
-    position: sticky; }
-    .section.active + .section .card {
-      opacity: 0.5; }
-    .section.active .card {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-      opacity: 1; }
   .section:nth-child(3n + 1) .name p {
     background: #E9625A; }
   .section:nth-child(3n + 1) .social .icon svg {

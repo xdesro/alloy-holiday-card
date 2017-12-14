@@ -1,7 +1,7 @@
 {
     "first": "Sarah",
     "last": "Shelness",
-    "recipe": "Traditional Japanese Garlic Edamame",
+    "recipe": "Side Street Inn's Garlic Edamame",
     "description": "Edamame wasn't available in grocery stores when my mom was growing up, so my grandparents grew soybean plants in their backyard garden. When it was time to pick the pods, my grandparents would dig up the whole plant and have my mom and her siblings pick the pods off the plant at the kitchen table. Now, it's pretty easy to find bags of frozen edamame for a quick snack or appetizer. We'll usually eat them steamed and salted, but it's fun to add extra flavor for special occasions like the holidays!"
 }
 
