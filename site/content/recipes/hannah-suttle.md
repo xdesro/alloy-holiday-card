@@ -1,7 +1,7 @@
 {
     "first": "Hannah",
     "last": "Suttle",
-    "recipe": "My English Great Grandmother’s Mincemeat Pie,
+    "recipe": "My English Great Grandmother’s Mincemeat Pie"
     "description": "For my parents, mince pies are filled with memories of childhood. My great grandmother, who made the best pastry in all of England, would bake dozens of them and they were just little bundles of celebration! They are as central to Christmas in England as Santa and jingle bells."
 }
 
