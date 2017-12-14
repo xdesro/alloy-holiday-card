@@ -9,8 +9,8 @@
     {{ partial "thanks" . }}
   </div>
 </div>
-
-
+{{ partial "no-ie" . | safeHTML }}
+{{ partial "no-mobile" . }}
 <div class="background-wrapper">
   <div class="mountains"></div>
 </div>

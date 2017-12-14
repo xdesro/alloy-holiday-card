@@ -1,12 +1,4 @@
 import $ from "jquery";
-// import Anime from "animejs";
-// import AOS from "aos";
-
-// AOS.init({
-//   duration: 1000,
-//   easing: "ease-in-sine",
-//   offset: 500
-// });
 
 let windowHeight = $(window).height();
 let windowWidth = $(window).width();
@@ -64,6 +56,14 @@ $(".nav li").on("click", function() {
       scrollTop: $(elTarget).offset().top
     },
     index * 200 + 500
+  );
+});
+$("#scroll-indicator").on("click", function() {
+  $("html, body").animate(
+    {
+      scrollTop: windowHeight
+    },
+    500
   );
 });
 (

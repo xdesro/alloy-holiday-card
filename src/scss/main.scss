@@ -31,7 +31,7 @@ body{
   width: 100%;
   background: transparentize($downriver, .25);
   * {
-    z-index: 3;
+    z-index: 4;
     position: relative;
   }
   .logo {
@@ -58,7 +58,8 @@ body{
     max-width: 30vw;
     line-height: 1.5;
   }
-  .scroll-indicator {
+  #scroll-indicator {
+    cursor: pointer;
     text-transform: uppercase;
     font-family: $sans;
     color: #fff;
@@ -109,7 +110,7 @@ body{
   position: fixed;
   top:0;
   left:0;
-  z-index: 2;
+  z-index: 1;
   opacity:.5;
 }
 
@@ -125,4 +126,41 @@ body{
 }
 .recipes-column {
   grid-area: recipe;
+}
+
+.oops {
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background: url('/img/background-comp.svg');
+  background-size: cover;
+  &:before {
+    content: "";
+    position: absolute;
+    background: transparentize($downriver, .5);
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+  }
+  p {
+    font-family: $serif;
+    font-size: 24px;
+    line-height: 34px;
+  }
+  h1, p {
+    max-width: 90vw;
+  }
+  &.ie {
+    display: block;
+  }
+}
+@media (min-width: 1024px) {
+  .oops {
+    display: none;
+  }
 }
