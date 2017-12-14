@@ -77,15 +77,11 @@ module.exports = __webpack_require__(1);
 "use strict";
 
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _jquery = __webpack_require__(2);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var windowHeight = (0, _jquery2.default)(window).height();
 var windowWidth = (0, _jquery2.default)(window).width();
@@ -147,100 +143,94 @@ function onScroll(e) {
     scrollTop: windowHeight
   }, 500);
 });
-(
-//   // Snowflake
-function () {
-  var SNOW_COUNT = 100;
+// (
+// //   // Snowflake
+//   () => {
+//     const SNOW_COUNT = 100;
 
-  var snowContainer = document.querySelector(".snow-container");
+//     const snowContainer = document.querySelector(".snow-container");
 
-  var canvas = document.createElement("canvas");
-  var ctx = canvas.getContext("2d");
+//     const canvas = document.createElement("canvas");
+//     const ctx = canvas.getContext("2d");
 
-  var width = window.outerWidth;
-  var height = window.outerHeight;
-  var i = 0;
-  var active = false;
+//     let width = window.outerWidth;
+//     let height = window.outerHeight;
+//     let i = 0;
+//     const active = false;
 
-  function onResize() {
-    width = window.outerWidth;
-    height = window.outerHeight;
-    canvas.width = width;
-    canvas.height = height;
-    ctx.fillStyle = "#FFF";
+//     function onResize() {
+//       width = window.outerWidth;
+//       height = window.outerHeight;
+//       canvas.width = width;
+//       canvas.height = height;
+//       ctx.fillStyle = "#FFF";
 
-    requestAnimationFrame(update);
-  }
+//       requestAnimationFrame(update);
+//     }
 
-  var Snowflake = function () {
-    function Snowflake() {
-      _classCallCheck(this, Snowflake);
+//     class Snowflake {
+//       constructor() {
+//         this.x = 0;
+//         this.y = 0;
+//         this.vy = 0;
+//         this.vx = 0;
+//         this.r = 0;
 
-      this.x = 0;
-      this.y = 0;
-      this.vy = 0;
-      this.vx = 0;
-      this.r = 0;
+//         this.reset();
+//       }
 
-      this.reset();
-    }
+//       reset() {
+//         this.x = Math.random() * width;
+//         this.y = Math.random() * -height;
 
-    _createClass(Snowflake, [{
-      key: "reset",
-      value: function reset() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * -height;
+//         this.vy = 1 + Math.random() * 3;
+//         this.vx = 0.5 - Math.random();
 
-        this.vy = 1 + Math.random() * 3;
-        this.vx = 0.5 - Math.random();
+//         this.r = 1 + Math.random() * 2;
 
-        this.r = 1 + Math.random() * 2;
+//         this.o = 0.5 + Math.random() * 0.5;
+//       }
+//     }
 
-        this.o = 0.5 + Math.random() * 0.5;
-      }
-    }]);
+//     canvas.style.position = "absolute";
+//     canvas.style.left = canvas.style.top = "0";
 
-    return Snowflake;
-  }();
+//     const snowflakes = [];
+//     let snowflake;
+//     for (i = 0; i < SNOW_COUNT; i++) {
+//       snowflake = new Snowflake();
+//       snowflake.reset();
+//       snowflakes.push(snowflake);
+//     }
 
-  canvas.style.position = "absolute";
-  canvas.style.left = canvas.style.top = "0";
+//     function update() {
+//       ctx.clearRect(0, 0, width, height);
 
-  var snowflakes = [];
-  var snowflake = void 0;
-  for (i = 0; i < SNOW_COUNT; i++) {
-    snowflake = new Snowflake();
-    snowflake.reset();
-    snowflakes.push(snowflake);
-  }
+//       for (i = 0; i < SNOW_COUNT; i++) {
+//         snowflake = snowflakes[i];
+//         snowflake.y += snowflake.vy;
+//         snowflake.x += snowflake.vx;
 
-  function update() {
-    ctx.clearRect(0, 0, width, height);
+//         ctx.globalAlpha = snowflake.o;
+//         ctx.beginPath();
+//         ctx.arc(snowflake.x, snowflake.y, snowflake.r, 0, Math.PI * 2, false);
+//         ctx.closePath();
+//         ctx.fill();
 
-    for (i = 0; i < SNOW_COUNT; i++) {
-      snowflake = snowflakes[i];
-      snowflake.y += snowflake.vy;
-      snowflake.x += snowflake.vx;
+//         if (snowflake.y > height) {
+//           snowflake.reset();
+//         }
+//       }
 
-      ctx.globalAlpha = snowflake.o;
-      ctx.beginPath();
-      ctx.arc(snowflake.x, snowflake.y, snowflake.r, 0, Math.PI * 2, false);
-      ctx.closePath();
-      ctx.fill();
+//       requestAnimationFrame(update);
+//     }
 
-      if (snowflake.y > height) {
-        snowflake.reset();
-      }
-    }
+//     onResize();
+//     window.addEventListener("resize", onResize, false);
 
-    requestAnimationFrame(update);
-  }
-
-  onResize();
-  window.addEventListener("resize", onResize, false);
-
-  snowContainer.appendChild(canvas);
-})();
+//     snowContainer.appendChild(canvas);
+//   }
+// )();
 
 // Console Easter Egg
 var consoleStyles = ["background: linear-gradient(135deg, #E9625A 0%,#0A204C 100%);", "color: white", "padding: 10px 20px", "line-height: 35px", "font-family: sans-serif"].join(";");

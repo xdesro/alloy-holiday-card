@@ -16,9 +16,12 @@
 body::-webkit-scrollbar { 
   display: none; 
 }
+html {
+  font-size: 10px;
+}
 body{
   font-family: sans-serif;
-  font-size: 1em;
+  font-size: 1.6rem;
   min-height: 100vh;
   background: $downriver;
 }
@@ -26,7 +29,7 @@ body{
   text-align: center;
   position: relative;
   z-index: 2;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +41,7 @@ body{
     position: relative;
   }
   .logo {
-    max-width: 200px;
+    max-width: 10vw;
     margin: 0 auto 40px;
     height: 100px;
     img {
@@ -54,11 +57,11 @@ body{
     background: $sienna;
     height: 5px;
     width: 5vw;
-    margin: 30px auto 40px;
+        margin: 1vw auto 2.5vw;
   }
   .intro-text {
-    font-size: 20px;
-    max-width: 30vw;
+    font-size: 2rem;
+    max-width: 40vw;
     line-height: 1.5;
   }
   #scroll-indicator {
@@ -118,7 +121,7 @@ body{
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 90vw;
   margin: 0 auto;
   display: grid;
   grid-template-areas: "nav recipe";

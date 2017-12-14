@@ -1,7 +1,7 @@
 .section {
   padding: 100px 0 100px 150px;
   box-sizing: border-box;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -52,13 +52,13 @@
   transition: all .2s ease;
   position: relative;
   background: transparentize($downriver, 0.4);
-  padding: 20px 50px 50px;
+  padding: 2vw 2.5vw 2.5vw;
   display: grid;
   grid-template-areas:
     "info story"
     "info recipe";
   grid-template-rows: auto 1fr;
-  grid-template-columns: 220px auto;
+  grid-template-columns: 15vw auto;
   // // box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
   // &:before {
   //   background: transparentize($downriver, 0.3);
@@ -70,22 +70,9 @@
   //   bottom: 0;
   //   z-index: -1;
   // }
-  .card-background {
-    content: "";
-    background-image: url(/img/background-comp.svg);
-    filter: blur(5px);
-    background-attachment: fixed;
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    z-index: -2;
-    clip-path: inset(5.5px 5px 5px 5px);
-  }
   .info {
     grid-area: info;
-    transform: translateX(-50%);
+    transform: translateX(-7vw);
   }
   .name {
     margin-top: 50px;
@@ -93,7 +80,7 @@
     p {
       font-weight: 900;
       font-family: $serif;
-      font-size: 56px;
+      font-size: calc(2.8vw + 1rem);
       line-height: 1.45;
       display: inline;
       padding: 10px 10px 5px 10px;
@@ -103,17 +90,18 @@
     margin-top: 25px;
     grid-area: image;
     img {
-      height: 200px;
+      height: 20rem;
     }
   }
   .story {
     grid-area: story;
     h1 {
-      font-size: 27px;
+      font-size: 2.7rem;
       font-weight: bold;
       line-height: 40px;
     }
     p {
+      font-size: 1.6rem;
       line-height: 1.5;
     }
   }
@@ -136,6 +124,10 @@
     }
     ul {
       margin-bottom: 20px;
+      font-size: 1.55rem;
+    }
+    ol {
+      font-size: 1.55rem;
     }
   }
   .recipe::-webkit-scrollbar { 

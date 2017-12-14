@@ -258,7 +258,7 @@ ol {
   padding: 100px 0 100px 150px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -285,36 +285,22 @@ ol {
   transition: all .2s ease;
   position: relative;
   background: rgba(10, 32, 76, 0.6);
-  padding: 20px 50px 50px;
+  padding: 2vw 2.5vw 2.5vw;
   display: grid;
   grid-template-areas: "info story" "info recipe";
   grid-template-rows: auto 1fr;
-  grid-template-columns: 220px auto; }
-  .card .card-background {
-    content: "";
-    background-image: url(/img/background-comp.svg);
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
-    background-attachment: fixed;
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    z-index: -2;
-    -webkit-clip-path: inset(5.5px 5px 5px 5px);
-    clip-path: inset(5.5px 5px 5px 5px); }
+  grid-template-columns: 15vw auto; }
   .card .info {
     grid-area: info;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%); }
+    -webkit-transform: translateX(-7vw);
+    transform: translateX(-7vw); }
   .card .name {
     margin-top: 50px;
     grid-area: title; }
     .card .name p {
       font-weight: 900;
       font-family: "Butler", Garamond, Times New Roman, serif;
-      font-size: 56px;
+      font-size: calc(2.8vw + 1rem);
       line-height: 1.45;
       display: inline;
       padding: 10px 10px 5px 10px; }
@@ -322,14 +308,15 @@ ol {
     margin-top: 25px;
     grid-area: image; }
     .card .profile-img img {
-      height: 200px; }
+      height: 20rem; }
   .card .story {
     grid-area: story; }
     .card .story h1 {
-      font-size: 27px;
+      font-size: 2.7rem;
       font-weight: bold;
       line-height: 40px; }
     .card .story p {
+      font-size: 1.6rem;
       line-height: 1.5; }
   .card .recipe {
     background: #0A204C;
@@ -351,7 +338,10 @@ ol {
       font-size: 21px;
       margin-bottom: 10px; }
     .card .recipe ul {
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      font-size: 1.55rem; }
+    .card .recipe ol {
+      font-size: 1.55rem; }
   .card .recipe::-webkit-scrollbar {
     display: none; }
   .card .social {
@@ -391,9 +381,12 @@ ol {
 body::-webkit-scrollbar {
   display: none; }
 
+html {
+  font-size: 10px; }
+
 body {
   font-family: sans-serif;
-  font-size: 1em;
+  font-size: 1.6rem;
   min-height: 100vh;
   background: #0A204C; }
 
@@ -401,7 +394,7 @@ body {
   text-align: center;
   position: relative;
   z-index: 2;
-  height: 100vh;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -421,7 +414,7 @@ body {
     z-index: 4;
     position: relative; }
   .intro .logo {
-    max-width: 200px;
+    max-width: 10vw;
     margin: 0 auto 40px;
     height: 100px; }
     .intro .logo img {
@@ -434,10 +427,10 @@ body {
     background: #E9625A;
     height: 5px;
     width: 5vw;
-    margin: 30px auto 40px; }
+    margin: 1vw auto 2.5vw; }
   .intro .intro-text {
-    font-size: 20px;
-    max-width: 30vw;
+    font-size: 2rem;
+    max-width: 40vw;
     line-height: 1.5; }
   .intro #scroll-indicator {
     cursor: pointer;
@@ -492,7 +485,7 @@ body {
   opacity: .5; }
 
 .container {
-  max-width: 1000px;
+  max-width: 90vw;
   margin: 0 auto;
   display: grid;
   grid-template-areas: "nav recipe";
