@@ -118,11 +118,11 @@ body{
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   display: grid;
   grid-template-areas: "nav recipe";
-  grid-template-columns: 200px auto;
+  grid-template-columns: 10vw auto;
 }
 .navigation {
   grid-area: nav;
