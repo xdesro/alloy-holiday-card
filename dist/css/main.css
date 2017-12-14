@@ -225,6 +225,8 @@ ol {
   .section.active {
     position: -webkit-sticky;
     position: sticky; }
+    .section.active + .section .card {
+      opacity: 0.5; }
     .section.active .card {
       -webkit-transform: translateY(0);
       transform: translateY(0);
