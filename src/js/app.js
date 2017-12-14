@@ -9,7 +9,12 @@ $(document).on("resize", () => {
 $(".card-background").css({
   "background-size": windowWidth + "px " + windowHeight + "px"
 });
-
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+$(document).ready(function() {
+  $("html, body").scrollTop(0);
+});
 $(document).on("scroll", onScroll);
 function onScroll(e) {
   const scrollPos = $(document).scrollTop();

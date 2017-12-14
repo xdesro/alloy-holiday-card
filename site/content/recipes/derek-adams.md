@@ -1,7 +1,7 @@
 {
 "first": "Derek",
 "last": "Adams",
-"recipe": "My Go-To 'Were We Supposed to Bring Something?' Cupcakes",
+"recipe": "My Go-To “Were We Supposed to Bring Something?” Cupcakes",
 "description": "My family has never really had any secret recipes. They live in the Midwest and on the years when I do make it out there, my wife and I need a recipe that can be put together in situ and doesn't require a lot of kitchen space or time. This recipe isn't just for holidays, either — it can be used for any gathering you're invited to without much warning. As an added bonus, these cupcakes can be made vegan!"
 }
 
