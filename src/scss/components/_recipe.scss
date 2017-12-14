@@ -51,7 +51,7 @@
 .card {
   transition: all .2s ease;
   position: relative;
-  background: transparentize($downriver, 0.5);
+  background: transparentize($downriver, 0.4);
   padding: 20px 50px 50px;
   display: grid;
   grid-template-areas:
@@ -59,17 +59,17 @@
     "info recipe";
   grid-template-rows: auto 1fr;
   grid-template-columns: 220px auto;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  &:before {
-    background: transparentize($downriver, 0.3);
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-  }
+  // // box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  // &:before {
+  //   background: transparentize($downriver, 0.3);
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   z-index: -1;
+  // }
   .card-background {
     content: "";
     background-image: url(/img/background-comp.svg);
