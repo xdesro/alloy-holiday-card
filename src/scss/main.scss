@@ -10,6 +10,9 @@
 @import "components/recipe";
 @import "components/thanks";
 
+.leadinModal {
+  display: none !important;
+}
 body::-webkit-scrollbar { 
   display: none; 
 }

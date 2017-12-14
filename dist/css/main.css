@@ -385,6 +385,9 @@ ol {
     max-width: 50px;
     margin-right: 25px; }
 
+.leadinModal {
+  display: none !important; }
+
 body::-webkit-scrollbar {
   display: none; }
 
