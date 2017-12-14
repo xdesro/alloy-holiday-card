@@ -1,54 +1,55 @@
 import $ from "jquery";
 
-let windowHeight = $(window).height();
-let windowWidth = $(window).width();
-$(document).on("resize", () => {
-  windowHeight = $(window).height();
-  windowWidth = $(window).width();
-});
-$(".card-background").css({
-  "background-size": windowWidth + "px " + windowHeight + "px"
-});
+// Forget Scroll Position
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
 $(document).ready(function() {
   $("html, body").scrollTop(0);
 });
+
+let windowHeight, windowWidth, navHeight, docHeight, navRatio;
+const getParams = () => {
+  windowHeight = $(window).height();
+  windowWidth = $(window).width();
+  navHeight = $('.nav').outerHeight();
+  docHeight = $(document).outerHeight() - windowHeight;
+  navRatio = navHeight / docHeight * -1;
+}
+getParams();
+$(document).on("resize", getParams());
+
 $(document).on("scroll", onScroll);
+
+const navItems = $(".nav li");
+const doc = document.getElementsByTagName("html")[0];
 function onScroll(e) {
   const scrollPos = $(document).scrollTop();
-
   // Move Nav
-  const navHeight = $('.nav').outerHeight();
-  const docHeight = $(document).outerHeight() - windowHeight;
-  const navRatio = navHeight / docHeight * -1;
   if (scrollPos > windowHeight) {
     $(".nav").css({
       transform: "translateY(" + (scrollPos - windowHeight) * navRatio + "px)"
     });
   }
-
   // Active States for Nav and Card
-  $(".nav li").each(function() {
+  navItems.each(function() {
     const currentLink = $(this);
-    const refElement = $(currentLink.attr("data-target"));
+    const targetSection = $(currentLink.attr("data-target"));
+    const sectionTop = targetSection.position().top
+    const halfWindow = Math.floor(windowHeight / 2);
     if (
-      refElement.position().top <= scrollPos &&
-      refElement.position().top + refElement.height() > scrollPos
+      sectionTop <= scrollPos + halfWindow
+      // sectionTop + targetSection.innerHeight() * 2 > scrollPos + halfWindow
     ) {
-      $(".section").removeClass("active");
-      $(".nav li").removeClass("active");
+        $(".section").removeClass("active");
+        $(".nav li").removeClass("active");
       currentLink.addClass("active");
-      refElement.addClass("active");
+      targetSection.addClass("active");
       const accentColor = $(currentLink.attr("data-target") + " .name p").css(
         "background-color"
       );
-      const doc = document.getElementsByTagName("html")[0];
       doc.setAttribute("style", "--accent-color:" + accentColor);
-    } else {
-      currentLink.removeClass("active");
-    }
+    } 
   });
 }
 
@@ -60,7 +61,7 @@ $(".nav li").on("click", function() {
     {
       scrollTop: $(elTarget).offset().top
     },
-    index * 200 + 500
+    index * 200 + 500, 'swing'
   );
 });
 $("#scroll-indicator").on("click", function() {
@@ -84,7 +85,6 @@ $("#scroll-indicator").on("click", function() {
     let width = window.outerWidth;
     let height = window.outerHeight;
     let i = 0;
-    const active = false;
 
     function onResize() {
       width = window.outerWidth;
