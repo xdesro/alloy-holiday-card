@@ -6,6 +6,16 @@
   display: flex;
   align-items: center;
   z-index: 3;
+  .card {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  &.active {
+    .card {
+      ransform: translateY(0);
+      opacity: 1;
+    }
+  }
   &:nth-child(3n + 1) {
     .name p {
       background: $sienna;
@@ -33,6 +43,7 @@
 }
 
 .card {
+  transition: all .2s ease;
   position: relative;
   background: transparentize($downriver, 0.5);
   padding: 20px 50px 50px;
@@ -83,7 +94,7 @@
     }
   }
   .profile-img {
-    margin-top: 50px;
+    margin-top: 25px;
     grid-area: image;
     img {
       height: 200px;
@@ -110,6 +121,9 @@
     column-gap: 50px;
     column-rule: 1px outset transparentize(white, 0.8);
     max-height: 60vh;
+    >div {
+      break-inside: avoid;
+    }
     h3 {
       font-size: 21px;
       margin-bottom: 10px;
@@ -135,5 +149,13 @@
       a {
           text-decoration: none;
       }
+  }
+}
+
+#hannah {
+  .recipe {
+    >div {
+      break-inside: auto;
+    }
   }
 }
