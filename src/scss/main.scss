@@ -162,7 +162,16 @@ body{
     display: block;
   }
 }
+.intro:not(.oops), .container {
+  display: none;
+}
 @media (min-width: 1024px) {
+  .intro:not(.oops) {
+    display: flex;
+  }
+  .container {
+    display: grid;
+  }
   .oops {
     display: none;
   }
