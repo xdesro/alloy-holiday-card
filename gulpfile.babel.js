@@ -3,6 +3,7 @@ import { spawn } from "child_process";
 import hugoBin from "hugo-bin";
 import gutil from "gulp-util";
 import sass from "gulp-sass";
+import autoprefixer from "gulp-autoprefixer";
 import postcss from "gulp-postcss";
 import cssImport from "postcss-import";
 import cssnext from "postcss-cssnext";
@@ -14,7 +15,6 @@ import webpackConfig from "./webpack.conf";
 // Asset Paths
 const stylePath = ["./src/scss/*.scss", "./src/scss/**/*.scss"],
   fontsPath = "./src/fonts/**/*";
-// imgPath = ['./site/static/img/*', './site/static/img/**/*'];
 
 const browserSync = BrowserSync.create();
 
@@ -41,6 +41,10 @@ gulp.task("sass", () =>
         sourcemaps: true
       }).on("error", sass.logError)
     )
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(gulp.dest("./dist/css"))
     .pipe(browserSync.stream())
 );

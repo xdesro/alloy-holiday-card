@@ -1,21 +1,22 @@
 {
     "first": "Stephon",
     "last": "Beaufort",
-    "recipe": "Okra Succotash",
-    "description": "This recipe was passed down from my grandma. It's a Cajun style dish which is easy to prepare. It is a hearty meal which can be easily shared with your family and loved ones. It always tastes better after the day it’s made."
+    "recipe": "New Orleans Okra Succotash",
+    "description": "This recipe was passed down from my grandma. It's a Cajun-style dish that’s easy to prepare. This hearty meal can be easily shared with your family and loved ones, and it tastes better a day after it’s made"
 }
 
 <div class="ingredients">
         <h3>Ingredients</h3>
         <ul>
-          <li>2lbs Fresh or Frozen Okra trimmed and cut into pieces</li>
-          <li>2 large yellow onions, finely chopped.</li>
-          <li>3 Bay Leaves</li>
-          <li>1lb smoked pork sausage cut into slices.</li>
-          <li>1lb boneless smoked ham cubed</li>
-          <li>Salt</li>
-          <li>Cajun Seasoning</li>
-          <li>Cooked rice </li>
+<li>2 lbs fresh or frozen okra trimmed and cut into pieces</li>
+<li>2 large yellow onions, finely chopped</li>
+<li>3 bay leaves</li>
+<li>1 lb smoked pork sausage cut into slices</li>
+<li>1 lb boneless smoked ham cut into cubes</li>
+<li>Salt</li>
+<li>Cajun seasoning</li>
+<li>Cooked rice</li>
+<li>1 can crushed tomatoes (optional) </li>
         </ul>
       </div>
       <div class="directions">

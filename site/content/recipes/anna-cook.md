@@ -2,7 +2,7 @@
     "first": "Anna",
     "last": "Cook",
     "recipe": "Grandma Otte’s Texas Sheet Cake",
-    "description": "I come from a farming community in Alva, Oklahoma. My family has had our farm for over 100 years, so we celebrate tradition, family, and good harvests. Our holidays are filled with lots of simple, shareable, comfort foods. There are so many that I loved: fried chicken, dilly bread, chocolate fudge, and so on, but this Texas sheet cake was special because my great grandma, Dorothy Otte, would make it. Here’s to her!"
+    "description": "I come from a farming community in Alva, Oklahoma. With our farm in the family for more than 100 years, we celebrate tradition, family and good harvests. Our holidays are filled with lots of simple and shareable comfort foods. There are so many that I love — fried chicken, dilly bread, chocolate fudge, and so on — but this Texas sheet cake was special because my great grandma, Dorothy Otte, would make it. Here’s to her!"
 }
 
 <div class="ingredients">

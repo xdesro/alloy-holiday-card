@@ -1,8 +1,8 @@
 {
     "first": "Matt",
     "last": "Moen",
-    "recipe": "Sausage Stuffing",
-    "description": "In our family there was one dish that got attached to a person -- Grandma's stuffing. I don't know where it originally came from. It may have been passed down for generations, or she may have pulled it from a Betty Crocker book in the 60's. Either way, it's important to note that it has sausage, and so it's amazing, and that since she passed everyone in the family competes to see who can make the most authentic version. This version comes from my mom."
+    "recipe": "Mom's Sausage Stuffing",
+    "description": "In our family, there was one dish that got attached to a person — Grandma's stuffing. I don't know where it originally came from. It may have been passed down for generations, or she may have pulled it from a Betty Crocker book in the 60's. Either way, it's important to note that it has sausage — and so it's amazing — and that since she passed everyone in the family competes to see who can make the most authentic version. This version comes from my mom."
 }
 
 <div class="ingredients">
