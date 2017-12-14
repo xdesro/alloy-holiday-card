@@ -2,7 +2,7 @@
     "first": "Henry",
     "last": "Desroches",
     "recipe": "Caraway & Maple Brussels Sprouts",
-    "description": "To be fair, you have to have a very high IQ to understand Rick and Morty. The humour is extremely subtle, and without a solid grasp of theoretical physics most of the jokes will go over a typical viewer’s head. There’s also Rick’s nihilistic outlook, which is deftly woven into his characterisation- his personal philosophy draws heavily from Narodnaya Volya literature, for instance. The fans understand this stuff; they have the intellectual capacity to truly appreciate the depths of these jokes, to realise that they’re not just funny- they say something deep about LIFE."
+    "description": "This recipe entered our holiday traditions when I was about 8. I wish I could say it was passed down for generations — but no, my dad found it in a book. In our house, the formal holiday meal was on Christmas Eve, which my dad was in charge of. My mom's not a huge fan of the kitchen, but she's a master at putting Butter Braids in the oven for Christmas breakfast. 🙄"
 }
 
 <div class="ingredients">
