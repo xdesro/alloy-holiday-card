@@ -28,6 +28,6 @@
 <li>Add milk to moisten</li>
 <li>Add turkey gravy for bolder flavor</li>
 <li>Ensure the  mixture to sticks together</li>
-<li>Bake 30-40 minutes at 325 degrees F (163 degrees C)</li>
+<li>Bake 30-40 minutes at 325º F (163º C)</li>
         </ol>
       </div>

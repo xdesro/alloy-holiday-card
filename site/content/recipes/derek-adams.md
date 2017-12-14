@@ -19,9 +19,9 @@
         <ol>
 <li>Mix the cake mix and canned pumpkin</li>
 <li>Distribute portions of mixture into a muffin tin</li>
-<li>Bake at 325 degrees F (163 degrees C) for 19 minutes.</li>
+<li>Bake at 325º F (163º C) for 19 minutes</li>
 <li>Give them 10 minutes to cool</li>
 <li>Mix milk with powdered sugar in a bowl until thickened</li>
-<li>Dip the cupcakes for a frosting glaze.</li>
+<li>Dip the cupcakes for a frosting glaze</li>
         </ol>
       </div>

@@ -17,10 +17,10 @@
 <div class="directions">
   <h3>Directions</h3>
   <ol>
-<li>Pre-heat the oven to 375 degrees F  (190 degree C) </li>
-<li>Cut out the apple cores and arrange the apples in a baking dish (high edges help!). Pour in just enough cold water to cover the bottom of the baking dish. </li>
-<li>Mix the raisins, oats and honey in a bowl. Fill the empty core of each apple with the oat mush. Pack it full. </li>
-<li>Bake for 40 minutes. Get ready for a delicious-smelling house! </li>
-<li>Let the apples sit for a few minutes after you take them out of the oven. Serve each apple in its own cereal bowl while they're still hot, and top with healthy scoops of vanilla ice cream. Eat with a spoon! </li>
+<li>Pre-heat the oven to 375º F  (190 degree C).</li>
+<li>Cut out the apple cores and arrange the apples in a baking dish (high edges help!). Pour in just enough cold water to cover the bottom of the baking dish.</li>
+<li>Mix the raisins, oats and honey in a bowl. Fill the empty core of each apple with the oat mush. Pack it full.</li>
+<li>Bake for 40 minutes. Get ready for a delicious-smelling house!</li>
+<li>Let the apples sit for a few minutes after you take them out of the oven. Serve each apple in its own cereal bowl while they're still hot, and top with healthy scoops of vanilla ice cream. Eat with a spoon!</li>
   </ol>
 </div>

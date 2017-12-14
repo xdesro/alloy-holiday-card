@@ -21,6 +21,6 @@
         <li>Mix cherries and pineapple in a 9x13 inch pan </li>
 <li>Evenly sprinkle dry cake mix over fruit mixture</li>
 <li>Evenly distribute slices of butter and margarine across cake mix </li>
-<li>Bake in a 350 degrees F (175 degrees C) oven for 45 to 50 minutes or until golden brown. </li>
+<li>Bake in a 350º F (175º C) oven for 45 to 50 minutes or until golden brown</li>
         </ol>
       </div>

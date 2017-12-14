@@ -30,7 +30,7 @@
 <li>Roll dough out and cut with floured cookie cutter (triangled one preferred) </li>
 <li>Fill with solo filling in a can </li>
 <li>Fold over edges, press down a little so they don't open </li>
-<li>Bake at 350 degrees F (175 degrees C) for 20 to 30 minutes, or until brown at the edges</li>
-<li>When done, sprinkle cookies with powdered sugar.</li>
+<li>Bake at 350º F (175º C) for 20 to 30 minutes, or until brown at the edges</li>
+<li>When done, sprinkle cookies with powdered sugar</li>
         </ol>
       </div>

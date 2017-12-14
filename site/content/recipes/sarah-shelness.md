@@ -33,6 +33,6 @@
 <li>Add olive oil and garlic</li>
 <li>Saute until garlic begins to brown</li>
 <li>Turn off heat and add soy beans, toss to coat</li>
-<li>Finish with a squeeze of lemon.</li>
+<li>Finish with a squeeze of lemon</li>
         </ol>
       </div>

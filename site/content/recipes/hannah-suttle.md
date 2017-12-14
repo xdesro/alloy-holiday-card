@@ -18,10 +18,10 @@
       <div class="directions">
         <h3>Directions</h3>
         <ol>
-         <li>Heat the oven to 400 degrees F (205 degrees C)</li>
+         <li>Heat the oven to 400º F (205º C)</li>
 <li>Mix flour, butter and salt in a bowl or food processor until it has a sandy texture</li>
 <li>Whisk an egg and add it to the mixture</li>
-<li>Add cold water (as needed) until the mixture binds but is not sticky.</li>
+<li>Add cold water (as needed) until the mixture binds but is not sticky</li>
 <li>Place the dough in the fridge to chill for 15-30 minutes</li>
 <li>Dust the counter with flour and roll out two-thirds of the pastry until it is about ⅛-inch thick</li>
 <li>Use a small pie or circular cookie cutter to cut the dough to fit in a muffin tray</li>

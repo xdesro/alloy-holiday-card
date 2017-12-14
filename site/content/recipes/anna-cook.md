@@ -35,7 +35,7 @@
 <li>Once both items have been mixed, blend them all together quickly </li>
 <li>Pour mixture into cookie sheet</li>
 <li>Carefully place in oven, mixture can spill easily</li>
-<li>Bake at 350 degrees F (175 degrees C)  for about 30 minutes</li>
+<li>Bake at 350º F (175º C)  for about 30 minutes</li>
 </ol>
 <ol>
 <li>For frosting bring to boil: butter, cocoa, and milk</li>
