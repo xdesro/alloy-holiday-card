@@ -3,7 +3,7 @@
 <div class="container">
   {{ partial "navigation" . }}
   <div class="recipes-column"> 
-    {{ range .Data.Pages }}
+    {{ range sort .Data.Pages ".Params.last" }}
       {{ .Render "recipe" }}
     {{ end }}
     {{ partial "thanks" . }}

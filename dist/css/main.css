@@ -250,7 +250,9 @@ ol {
       -webkit-transition: all .1s ease;
       transition: all .1s ease; }
       .navigation .nav li.partially-hidden {
-        opacity: 0.1; }
+        opacity: 0.1;
+        -webkit-transform: scale(0.8) translateY(-50%);
+        transform: scale(0.8) translateY(-50%); }
       .navigation .nav li.hidden {
         opacity: 0; }
       .navigation .nav li.active {
@@ -305,8 +307,7 @@ ol {
   grid-template-rows: auto 1fr;
   grid-template-columns: 11vw auto;
   opacity: 0;
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease; }
+  transition: all .2s ease; }
   .card * {
     -webkit-transition: all .2s ease;
     transition: all .2s ease; }
@@ -558,6 +559,7 @@ body {
   max-width: 90vw;
   margin: 0 auto;
   display: grid;
+  grid-column-gap: 3vw;
   grid-template-areas: "nav recipe";
   grid-template-columns: 10vw auto; }
 

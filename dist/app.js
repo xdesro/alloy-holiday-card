@@ -120,8 +120,8 @@ var $ = _jquery2.default;
 }(_jquery2.default);
 
 // Forget Scroll Position
-if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual';
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
 }
 $(document).ready(function () {
   $("html, body").scrollTop(0);
@@ -133,48 +133,49 @@ var windowHeight = void 0,
     docHeight = void 0,
     navRatio = void 0,
     halfWindow = void 0;
-var html = document.getElementsByTagName('html')[0];
+var html = document.getElementsByTagName("html")[0];
 var getParams = function getParams() {
   windowHeight = $(window).height();
   windowWidth = $(window).width();
-  navHeight = $('.nav').outerHeight();
+  navHeight = $(".nav").outerHeight();
   docHeight = $(document).outerHeight() - windowHeight;
-  navRatio = navHeight / $('.nav li').length;
+  navRatio = navHeight / $(".nav li").length;
   halfWindow = Math.floor(windowHeight / 2);
 };
 getParams();
 $(document).on("resize", getParams());
 
-var navItems = $('.nav li');
-$('.section .card').viewportChecker({
-  classToAdd: 'active',
+var navItems = $(".nav li");
+$(".section .card").viewportChecker({
+  classToAdd: "active",
+  classToAddForFullView: "fixed",
   offset: halfWindow,
   repeat: true,
   callbackFunction: function callbackFunction(el) {
-    html.style.setProperty("--accent-color", $(el).find('.name p').css('background-color'));
-    var elId = $(el).parent().attr('id');
+    html.style.setProperty("--accent-color", $(el).find(".name p").css("background-color"));
+    var elId = $(el).parent().attr("id");
     navItems.each(function () {
-      var navTarget = $(this).attr('data-target').substr(1);
+      var navTarget = $(this).attr("data-target").substr(1);
       if (navTarget == elId) {
-        $(this).addClass('active');
+        $(this).addClass("active");
         var navIndex = navItems.index(this);
-        $('.nav').css({
-          transform: 'translateY(' + -1 * navIndex * navRatio + 'px)'
+        $(".nav").css({
+          transform: "translateY(" + -1 * navIndex * navRatio + "px)"
         });
       } else {
-        $(this).removeClass('active');
+        $(this).removeClass("active");
       }
       var indexOfThis = navItems.index(this);
-      var indexOfActive = navItems.index($('.active'));
+      var indexOfActive = navItems.index($(".active"));
       if (indexOfThis >= indexOfActive) {
-        $(this).removeClass('partially-hidden');
-        $(this).removeClass('hidden');
+        $(this).removeClass("partially-hidden");
+        $(this).removeClass("hidden");
       } else if (indexOfActive - 1 === indexOfThis) {
-        $(this).addClass('partially-hidden');
-        $(this).removeClass('hidden');
+        $(this).addClass("partially-hidden");
+        $(this).removeClass("hidden");
       } else if (indexOfActive - 2 === indexOfThis) {
-        $(this).removeClass('partially-hidden');
-        $(this).addClass('hidden');
+        $(this).removeClass("partially-hidden");
+        $(this).addClass("hidden");
       }
     });
   }
@@ -191,9 +192,8 @@ $(".nav li").on("click", function () {
 $("#scroll-indicator").on("click", function () {
   $("html, body").animate({ scrollTop: windowHeight }, 500);
 });
-(
 // Snowflake
-function () {
+(function () {
   var SNOW_COUNT = 100;
 
   var snowContainer = document.querySelector(".snow-container");

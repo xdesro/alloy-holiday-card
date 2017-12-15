@@ -2,7 +2,7 @@
     <div class="nav-logo"></div>
     <div class="beacon"><div class="dot"></div></div>
     <ul class="nav">
-        {{ range .Pages }}
+        {{ range sort .Pages ".Params.last" }}
         <li data-target="#{{ lower .Params.first }}">{{ .Params.first }}</li>
         {{ end }}
         <li data-target="#thanks">Thanks</li>
