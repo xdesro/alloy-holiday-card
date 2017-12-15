@@ -1,0 +1,176 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: "Butler";
+  src: url("../fonts/butler/Butler-Black.eot");
+  src: url("../fonts/butler/Butler-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/butler/Butler-Black.woff2") format("woff2"), url("../fonts/butler/Butler-Black.woff") format("woff"), url("../fonts/butler/Butler-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Butler";
+  src: url("../fonts/butler/Butler-UltraLight.eot");
+  src: url("../fonts/butler/Butler-UltraLight.eot?#iefix") format("embedded-opentype"), url("../fonts/butler/Butler-UltraLight.woff2") format("woff2"), url("../fonts/butler/Butler-UltraLight.woff") format("woff"), url("../fonts/butler/Butler-UltraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Butler";
+  src: url("../fonts/butler/Butler.eot");
+  src: url("../fonts/butler/Butler.eot?#iefix") format("embedded-opentype"), url("../fonts/butler/Butler.woff2") format("woff2"), url("../fonts/butler/Butler.woff") format("woff"), url("../fonts/butler/Butler.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Butler";
+  src: url("../fonts/butler/Butler-Medium.eot");
+  src: url("../fonts/butler/Butler-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/butler/Butler-Medium.woff2") format("woff2"), url("../fonts/butler/Butler-Medium.woff") format("woff"), url("../fonts/butler/Butler-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Butler";
+  src: url("../fonts/butler/Butler-Light.eot");
+  src: url("../fonts/butler/Butler-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/butler/Butler-Light.woff2") format("woff2"), url("../fonts/butler/Butler-Light.woff") format("woff"), url("../fonts/butler/Butler-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Butler";
+  src: url("../fonts/butler/Butler-Bold.eot");
+  src: url("../fonts/butler/Butler-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/butler/Butler-Bold.woff2") format("woff2"), url("../fonts/butler/Butler-Bold.woff") format("woff"), url("../fonts/butler/Butler-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Butler";
+  src: url("../fonts/butler/Butler-ExtraBold.eot");
+  src: url("../fonts/butler/Butler-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/butler/Butler-ExtraBold.woff2") format("woff2"), url("../fonts/butler/Butler-ExtraBold.woff") format("woff"), url("../fonts/butler/Butler-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: bold;
+  font-style: normal;
+  src: url("../fonts/proxima-nova/31C688_0_0.eot");
+  src: url("../fonts/proxima-nova/31C688_0_0.eot?#iefix") format("embedded-opentype"), url("../fonts/proxima-nova/31C688_0_0.woff2") format("woff2"), url("../fonts/proxima-nova/31C688_0_0.woff") format("woff"), url("../fonts/proxima-nova/31C688_0_0.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: bold;
+  font-style: italic;
+  src: url("../fonts/proxima-nova/31C688_1_0.eot");
+  src: url("../fonts/proxima-nova/31C688_1_0.eot?#iefix") format("embedded-opentype"), url("../fonts/proxima-nova/31C688_1_0.woff2") format("woff2"), url("../fonts/proxima-nova/31C688_1_0.woff") format("woff"), url("../fonts/proxima-nova/31C688_1_0.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/proxima-nova/31C688_2_0.eot");
+  src: url("../fonts/proxima-nova/31C688_2_0.eot?#iefix") format("embedded-opentype"), url("../fonts/proxima-nova/31C688_2_0.woff2") format("woff2"), url("../fonts/proxima-nova/31C688_2_0.woff") format("woff"), url("../fonts/proxima-nova/31C688_2_0.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: normal;
+  font-style: italic;
+  src: url("../fonts/proxima-nova/31C688_3_0.eot");
+  src: url("../fonts/proxima-nova/31C688_3_0.eot?#iefix") format("embedded-opentype"), url("../fonts/proxima-nova/31C688_3_0.woff2") format("woff2"), url("../fonts/proxima-nova/31C688_3_0.woff") format("woff"), url("../fonts/proxima-nova/31C688_3_0.ttf") format("truetype"); }
+
+:root {
+  --accent-color: #E9625A;
+  --active-nav: 1; }
+
+.oops, .navigation, .intro, .social, .info, #thanks {
+  display: none; }
+
+div {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+h1, h2, h3 {
+  font-family: "Butler", Garamond, Times New Roman, serif;
+  font-weight: 900; }
+
+h3 {
+  line-height: 2;
+  font-weight: 800; }
+
+p, ul, ol, h1, h2, h3 {
+  color: #000 !important; }
+
+.section {
+  margin-bottom: 10px;
+  height: 50%;
+  page-break-inside: avoid; }
+
+.card {
+  border: 1px dashed black;
+  padding: 20px;
+  position: relative; }
+  .card:before {
+    content: url(/img/print-logo.png);
+    display: block;
+    width: 30%;
+    height: 100px;
+    float: right;
+    opacity: .2; }
+  .card h1 {
+    font-size: 36px;
+    margin-bottom: 10px; }
+
+.name p {
+  font-size: 20px;
+  display: inline; }
+
+.name br {
+  display: none; }
+
+.story {
+  padding: 20px;
+  margin-top: -20px;
+  margin-left: -20px;
+  margin-right: -20px; }
+
+.recipe {
+  -webkit-columns: 2;
+  columns: 2;
+  -webkit-column-rule: 1px solid black;
+  column-rule: 1px solid black; }
+  .recipe p {
+    font-style: italic; }
