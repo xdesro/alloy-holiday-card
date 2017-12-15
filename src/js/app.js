@@ -21,6 +21,7 @@ $(document).ready(function() {
 });
 
 let windowHeight, windowWidth, navHeight, docHeight, navRatio, halfWindow;
+const html = document.getElementsByTagName('html')[0];
 const getParams = () => {
   windowHeight = $(window).height();
   windowWidth = $(window).width();
@@ -38,6 +39,7 @@ $('.section .card').viewportChecker({
   offset: halfWindow,
   repeat:true,
   callbackFunction: el => {
+    html.style.setProperty("--accent-color", $(el).find('.name p').css('background-color'));
     const elId = $(el).parent().attr('id');
     navItems.each(function() {
       const navTarget = $(this).attr('data-target').substr(1);
@@ -49,6 +51,18 @@ $('.section .card').viewportChecker({
         });
       } else {
         $(this).removeClass('active');
+      }
+      const indexOfThis = navItems.index(this);
+      const indexOfActive = navItems.index($('.active'))
+      if (indexOfThis >= indexOfActive) {
+        $(this).removeClass('partially-hidden');
+        $(this).removeClass('hidden');  
+      } else if (indexOfActive - 1 === indexOfThis) {
+        $(this).addClass('partially-hidden');
+        $(this).removeClass('hidden');  
+      } else if (indexOfActive - 2 === indexOfThis) {
+        $(this).removeClass('partially-hidden');
+        $(this).addClass('hidden');  
       }
     });
   }

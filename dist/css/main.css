@@ -249,6 +249,10 @@ ol {
       opacity: 0.2;
       -webkit-transition: all .1s ease;
       transition: all .1s ease; }
+      .navigation .nav li.partially-hidden {
+        opacity: 0.1; }
+      .navigation .nav li.hidden {
+        opacity: 0; }
       .navigation .nav li.active {
         opacity: 1;
         -webkit-transform: scale(1.2) translateY(-50%);
@@ -300,9 +304,9 @@ ol {
   grid-template-areas: "info story" "info recipe";
   grid-template-rows: auto 1fr;
   grid-template-columns: 11vw auto;
-  opacity: 0.2;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease; }
+  opacity: 0;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease; }
   .card * {
     -webkit-transition: all .2s ease;
     transition: all .2s ease;
@@ -312,6 +316,8 @@ ol {
     opacity: 1; }
     .card.active .profile-img {
       opacity: 1;
+      -webkit-transition-delay: .5s;
+      transition-delay: .5s;
       -webkit-transform: translateY(0px);
       transform: translateY(0px); }
     .card.active .recipe {

@@ -87,6 +87,12 @@
       transform: scale(1) translateY(-50%);
       opacity: 0.2;
       transition: all .1s ease;
+      &.partially-hidden {
+        opacity: 0.1;
+      }
+      &.hidden {
+        opacity: 0;
+      }
       &.active {
         opacity: 1;
         transform: scale(1.2) translateY(-50%);
