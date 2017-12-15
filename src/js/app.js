@@ -34,8 +34,7 @@ $(document).on("resize", getParams());
 
 const navItems = $('.nav li');
 $('.section .card').viewportChecker({
-  // classToAdd: 'active',
-  classToAddForFullView: 'active',
+  classToAdd: 'active',
   offset: halfWindow,
   repeat:true,
   callbackFunction: el => {
@@ -45,14 +44,12 @@ $('.section .card').viewportChecker({
       if (navTarget == elId) {
         $(this).addClass('active');
         const navIndex = navItems.index(this);
-        console.log(navRatio);
         $('.nav').css({
           transform: 'translateY(' + (-1 * navIndex * navRatio) + 'px)'
-        })
-
+        });
       } else {
         $(this).removeClass('active');
-    }
+      }
     });
   }
 });
@@ -65,7 +62,7 @@ $(".nav li").on("click", function() {
     {
       scrollTop: $(elTarget).offset().top
     },
-    index * 200 + 500, 'swing'
+    500
   );
 });
 $("#scroll-indicator").on("click", function() {

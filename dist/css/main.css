@@ -172,7 +172,11 @@ ol {
     width: 150px;
     height: 100px;
     padding-right: 20px;
-    padding-top: 50px; }
+    padding-top: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 100%; }
   .navigation .beacon {
     position: absolute;
     top: 50%;
@@ -258,7 +262,7 @@ ol {
           border-radius: 100%; }
 
 .section {
-  padding: 100px 0 100px 150px;
+  padding: 100px 0 100px 140px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   min-height: 100vh;
@@ -287,35 +291,77 @@ ol {
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
   position: relative;
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
   background: rgba(10, 32, 76, 0.6);
   padding: 2vw 2.5vw 2.5vw;
+  margin-right: 30px;
   display: grid;
   grid-template-areas: "info story" "info recipe";
   grid-template-rows: auto 1fr;
-  grid-template-columns: 15vw auto;
+  grid-template-columns: 11vw auto;
   opacity: 0.2;
   -webkit-transition: all .3s ease;
   transition: all .3s ease; }
+  .card * {
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    -webkit-transition-delay: .4s;
+    transition-delay: .4s; }
   .card.active {
     opacity: 1; }
+    .card.active .profile-img {
+      opacity: 1;
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px); }
+    .card.active .recipe {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+      transform: translateX(0); }
+    .card.active .story h1 {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px); }
+    .card.active .story p {
+      opacity: 1;
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px); }
   .card .info {
     grid-area: info;
-    -webkit-transform: translateX(-7vw);
-    transform: translateX(-7vw); }
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); }
   .card .name {
     width: 0;
     margin-top: 50px;
-    grid-area: title; }
+    grid-area: title;
+    position: relative; }
+    .card .name:before {
+      content: "";
+      background-image: url(/img/snow.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom left;
+      display: block;
+      width: 100px;
+      height: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+      z-index: -1; }
     .card .name p {
       font-weight: 900;
       font-family: "Butler", Garamond, Times New Roman, serif;
       font-size: calc(2.8vw + 1rem);
-      line-height: 1.45;
+      line-height: 1.6;
       display: inline;
-      padding: 10px 10px 5px 10px; }
+      padding: 15px 10px 5px 10px; }
   .card .profile-img {
     margin-top: 25px;
-    grid-area: image; }
+    grid-area: image;
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px); }
     .card .profile-img img {
       height: 20rem; }
   .card .story {
@@ -323,11 +369,21 @@ ol {
     .card .story h1 {
       font-size: 2.7rem;
       font-weight: bold;
-      line-height: 40px; }
+      line-height: 40px;
+      -webkit-transform: translateY(200%);
+      transform: translateY(200%); }
     .card .story p {
-      font-size: 1.6rem;
+      opacity: 0;
+      -webkit-transform: translateY(50px);
+      transform: translateY(50px);
+      font-size: 1.4rem;
       line-height: 1.5; }
   .card .recipe {
+    -webkit-transform: translateX(50px);
+    transform: translateX(50px);
+    opacity: 0;
+    -webkit-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
     background: #0A204C;
     overflow-y: scroll;
     margin-top: 20px;
@@ -348,19 +404,19 @@ ol {
       margin-bottom: 10px; }
     .card .recipe ul {
       margin-bottom: 20px;
-      font-size: 1.55rem; }
+      font-size: 1.4rem; }
     .card .recipe ol {
-      font-size: 1.55rem; }
+      font-size: 1.4rem; }
   .card .recipe::-webkit-scrollbar {
     display: none; }
   .card .social {
     position: absolute;
     right: 0;
     top: 20px;
-    padding: 10px;
+    padding: .5rem;
     text-align: center;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 1rem;
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
     letter-spacing: 1px;
@@ -368,7 +424,7 @@ ol {
     .card .social a {
       text-decoration: none; }
 
-#hannah .recipe > div {
+#hannah .recipe > div, #megan .recipe > div {
   -webkit-column-break-inside: auto;
   break-inside: auto; }
 
@@ -431,7 +487,7 @@ body {
       width: auto; }
   .intro h1 {
     margin: 0 auto;
-    max-width: 30vw; }
+    max-width: 55vw; }
   .intro .divider {
     background: #E9625A;
     height: 5px;
@@ -439,7 +495,7 @@ body {
     margin: 1vw auto 2.5vw; }
   .intro .intro-text {
     font-size: 2rem;
-    max-width: 40vw;
+    max-width: 55vw;
     line-height: 1.5; }
   .intro #scroll-indicator {
     cursor: pointer;
@@ -449,14 +505,8 @@ body {
     margin-top: 40px;
     font-size: 12px;
     letter-spacing: 2px;
-    -webkit-animation-name: bounce;
-    animation-name: bounce;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out; }
+    -webkit-animation: bounce 2s ease-in-out infinite;
+    animation: bounce 2s ease-in-out infinite; }
     .intro #scroll-indicator:before, .intro #scroll-indicator:after {
       content: "";
       width: 10px;
@@ -502,6 +552,7 @@ body {
   opacity: .5; }
 
 .container {
+  width: 1400px;
   max-width: 90vw;
   margin: 0 auto;
   display: grid;

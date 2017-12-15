@@ -36,9 +36,7 @@
 <li>Pour mixture into cookie sheet</li>
 <li>Carefully place in oven, mixture can spill easily</li>
 <li>Bake at 350º F (175º C)  for about 30 minutes</li>
-</ol>
-<ol>
-<li>For frosting bring to boil: butter, cocoa, and milk</li>
+<li>For frosting, boil butter, cocoa, and milk</li>
 <li>Remove from heat and add: powdered sugar, vanilla, and chopped walnuts</li>
 <li>Spread on hot cake</li>
         </ol>

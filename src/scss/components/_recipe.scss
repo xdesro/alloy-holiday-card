@@ -1,5 +1,5 @@
 .section {
-  padding: 100px 0 100px 150px;
+  padding: 100px 0 100px 140px;
   box-sizing: border-box;
   min-height: 100vh;
   position: relative;
@@ -35,39 +35,80 @@
 .card {
   transition: all .2s ease;
   position: relative;
+  transform-origin: 50% 0%;
   background: transparentize($downriver, 0.4);
   padding: 2vw 2.5vw 2.5vw;
+  margin-right: 30px;
   display: grid;
   grid-template-areas:
     "info story"
     "info recipe";
   grid-template-rows: auto 1fr;
-  grid-template-columns: 15vw auto;
+  grid-template-columns: 11vw auto;
   opacity: 0.2;
   transition: all .3s ease;
+  * {
+    transition: all .2s ease;
+    transition-delay: .4s;
+  }
   &.active {
     opacity: 1;
+    .profile-img {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    .recipe {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .story {
+      h1 {
+        transform: translateY(0px);
+      }
+      p {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
   }
   .info {
     grid-area: info;
-    transform: translateX(-7vw);
+    transform: translateX(-100%);
   }
   .name {
     width: 0;
     margin-top: 50px;
     grid-area: title;
+    position: relative;
+    &:before {
+      content: "";
+      background-image: url(/img/snow.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom left;
+      display: block;
+      width: 100px;
+      height: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-100%);
+      z-index: -1;
+    }
     p {
       font-weight: 900;
       font-family: $serif;
       font-size: calc(2.8vw + 1rem);
-      line-height: 1.45;
+      line-height: 1.6;
       display: inline;
-      padding: 10px 10px 5px 10px;
+      padding: 15px 10px 5px 10px;
     }
   }
   .profile-img {
     margin-top: 25px;
     grid-area: image;
+    opacity: 0;
+    transform: translateY(50px);
     img {
       height: 20rem;
     }
@@ -78,13 +119,19 @@
       font-size: 2.7rem;
       font-weight: bold;
       line-height: 40px;
+      transform: translateY(200%);
     }
     p {
-      font-size: 1.6rem;
+      opacity: 0;
+      transform: translateY(50px);
+      font-size: 1.4rem;
       line-height: 1.5;
     }
   }
   .recipe {
+    transform: translateX(50px);
+    opacity: 0;
+    transform-origin: 100% 50%;
     background: $downriver;
     overflow-y: scroll;
     margin-top: 20px;
@@ -103,10 +150,10 @@
     }
     ul {
       margin-bottom: 20px;
-      font-size: 1.55rem;
+      font-size: 1.4rem;
     }
     ol {
-      font-size: 1.55rem;
+      font-size: 1.4rem;
     }
   }
   .recipe::-webkit-scrollbar { 
@@ -116,10 +163,10 @@
       position: absolute;
       right:0;
       top: 20px;
-      padding: 10px;
+      padding: .5rem;
       text-align: center;
       text-transform: uppercase;
-      font-size: 12px;
+      font-size: 1rem;
       transform: translateX(100%);
       letter-spacing: 1px;
       background: $downriver;
@@ -129,7 +176,7 @@
   }
 }
 
-#hannah {
+#hannah, #megan {
   .recipe {
     >div {
       break-inside: auto;

@@ -1,7 +1,7 @@
 {
     "first": "Megan",
     "last": "Kilpatrick",
-    "recipe": "My Grandmother’s Scottish Baked Apples",
+    "recipe": "Grandmother’s Scottish Baked Apples",
     "description": "Growing up, most holidays were spent at my grandparents' house in Black Mountain, NC — the Kilpatrick side of the family. One of my grandfather's favorite desserts was Scottish Baked Apples. I think Grandmother was especially happy to make them because they were much healthier than many of his other favorite foods and beverages. The smell of baked apples still has the power to transport me to those wonderful days in the mountains. (And yes, I actually called them “Grandmother” and “Grandfather.”)"
 }
 
