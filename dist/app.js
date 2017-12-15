@@ -138,24 +138,29 @@ var getParams = function getParams() {
   windowWidth = $(window).width();
   navHeight = $('.nav').outerHeight();
   docHeight = $(document).outerHeight() - windowHeight;
-  navRatio = navHeight / docHeight * -1;
+  navRatio = navHeight / $('.nav li').length;
   halfWindow = Math.floor(windowHeight / 2);
 };
 getParams();
 $(document).on("resize", getParams());
 
 var navItems = $('.nav li');
-$('.section').viewportChecker({
-  classToAdd: 'active',
+$('.section .card').viewportChecker({
+  // classToAdd: 'active',
+  classToAddForFullView: 'active',
   offset: halfWindow,
   repeat: true,
   callbackFunction: function callbackFunction(el) {
-    console.log($(el));
-    var elId = $(el).attr('id');
+    var elId = $(el).parent().attr('id');
     navItems.each(function () {
       var navTarget = $(this).attr('data-target').substr(1);
       if (navTarget == elId) {
         $(this).addClass('active');
+        var navIndex = navItems.index(this);
+        console.log(navRatio);
+        $('.nav').css({
+          transform: 'translateY(' + -1 * navIndex * navRatio + 'px)'
+        });
       } else {
         $(this).removeClass('active');
       }

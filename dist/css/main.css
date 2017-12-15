@@ -224,6 +224,8 @@ ol {
         -webkit-transform: translateX(-50%) translateY(-50%);
         transform: translateX(-50%) translateY(-50%); }
   .navigation .nav {
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
     position: absolute;
     top: 50%;
     right: 0;
@@ -267,12 +269,7 @@ ol {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  z-index: 3;
-  opacity: 0.2;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease; }
-  .section.active {
-    opacity: 1; }
+  z-index: 3; }
   .section:nth-child(3n + 1) .name p {
     background: #E9625A; }
   .section:nth-child(3n + 1) .social .icon svg {
@@ -295,12 +292,18 @@ ol {
   display: grid;
   grid-template-areas: "info story" "info recipe";
   grid-template-rows: auto 1fr;
-  grid-template-columns: 15vw auto; }
+  grid-template-columns: 15vw auto;
+  opacity: 0.2;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease; }
+  .card.active {
+    opacity: 1; }
   .card .info {
     grid-area: info;
     -webkit-transform: translateX(-7vw);
     transform: translateX(-7vw); }
   .card .name {
+    width: 0;
     margin-top: 50px;
     grid-area: title; }
     .card .name p {
@@ -328,7 +331,7 @@ ol {
     background: #0A204C;
     overflow-y: scroll;
     margin-top: 20px;
-    margin-right: -10vmin;
+    margin-right: -103px;
     padding: 30px;
     -webkit-columns: 2;
     columns: 2;
