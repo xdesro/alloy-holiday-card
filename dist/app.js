@@ -87,75 +87,95 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var $ = _jquery2.default;
+
+/**
+ * jQuery-viewport-checker - v1.8.8 - 2017-09-25
+ * https://github.com/dirkgroenen/jQuery-viewport-checker
+ *
+ * Copyright (c) 2017 Dirk Groenen
+ * Licensed MIT <https://github.com/dirkgroenen/jQuery-viewport-checker/blob/master/LICENSE>
+ */
+
+!function (a) {
+  a.fn.viewportChecker = function (b) {
+    var c = { classToAdd: "visible", classToRemove: "invisible", classToAddForFullView: "full-visible", removeClassAfterAnimation: !1, offset: 100, repeat: !1, invertBottomOffset: !0, callbackFunction: function callbackFunction(a, b) {}, scrollHorizontal: !1, scrollBox: window };a.extend(c, b);var d = this,
+        e = { height: a(c.scrollBox).height(), width: a(c.scrollBox).width() };return this.checkElements = function () {
+      var b, f;c.scrollHorizontal ? (b = Math.max(a("html").scrollLeft(), a("body").scrollLeft(), a(window).scrollLeft()), f = b + e.width) : (b = Math.max(a("html").scrollTop(), a("body").scrollTop(), a(window).scrollTop()), f = b + e.height), d.each(function () {
+        var d = a(this),
+            g = {},
+            h = {};if (d.data("vp-add-class") && (h.classToAdd = d.data("vp-add-class")), d.data("vp-remove-class") && (h.classToRemove = d.data("vp-remove-class")), d.data("vp-add-class-full-view") && (h.classToAddForFullView = d.data("vp-add-class-full-view")), d.data("vp-keep-add-class") && (h.removeClassAfterAnimation = d.data("vp-remove-after-animation")), d.data("vp-offset") && (h.offset = d.data("vp-offset")), d.data("vp-repeat") && (h.repeat = d.data("vp-repeat")), d.data("vp-scrollHorizontal") && (h.scrollHorizontal = d.data("vp-scrollHorizontal")), d.data("vp-invertBottomOffset") && (h.scrollHorizontal = d.data("vp-invertBottomOffset")), a.extend(g, c), a.extend(g, h), !d.data("vp-animated") || g.repeat) {
+          String(g.offset).indexOf("%") > 0 && (g.offset = parseInt(g.offset) / 100 * e.height);var i = g.scrollHorizontal ? d.offset().left : d.offset().top,
+              j = g.scrollHorizontal ? i + d.width() : i + d.height(),
+              k = Math.round(i) + g.offset,
+              l = g.scrollHorizontal ? k + d.width() : k + d.height();g.invertBottomOffset && (l -= 2 * g.offset), k < f && l > b ? (d.removeClass(g.classToRemove), d.addClass(g.classToAdd), g.callbackFunction(d, "add"), j <= f && i >= b ? d.addClass(g.classToAddForFullView) : d.removeClass(g.classToAddForFullView), d.data("vp-animated", !0), g.removeClassAfterAnimation && d.one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () {
+            d.removeClass(g.classToAdd);
+          })) : d.hasClass(g.classToAdd) && g.repeat && (d.removeClass(g.classToAdd + " " + g.classToAddForFullView), g.callbackFunction(d, "remove"), d.data("vp-animated", !1));
+        }
+      });
+    }, ("ontouchstart" in window || "onmsgesturechange" in window) && a(document).bind("touchmove MSPointerMove pointermove", this.checkElements), a(c.scrollBox).bind("load scroll", this.checkElements), a(window).resize(function (b) {
+      e = { height: a(c.scrollBox).height(), width: a(c.scrollBox).width() }, d.checkElements();
+    }), this.checkElements(), this;
+  };
+}(_jquery2.default);
+
 // Forget Scroll Position
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
-(0, _jquery2.default)(document).ready(function () {
-  (0, _jquery2.default)("html, body").scrollTop(0);
+$(document).ready(function () {
+  $("html, body").scrollTop(0);
 });
 
 var windowHeight = void 0,
     windowWidth = void 0,
     navHeight = void 0,
     docHeight = void 0,
-    navRatio = void 0;
+    navRatio = void 0,
+    halfWindow = void 0;
 var getParams = function getParams() {
-  windowHeight = (0, _jquery2.default)(window).height();
-  windowWidth = (0, _jquery2.default)(window).width();
-  navHeight = (0, _jquery2.default)('.nav').outerHeight();
-  docHeight = (0, _jquery2.default)(document).outerHeight() - windowHeight;
+  windowHeight = $(window).height();
+  windowWidth = $(window).width();
+  navHeight = $('.nav').outerHeight();
+  docHeight = $(document).outerHeight() - windowHeight;
   navRatio = navHeight / docHeight * -1;
+  halfWindow = Math.floor(windowHeight / 2);
 };
 getParams();
-(0, _jquery2.default)(document).on("resize", getParams());
+$(document).on("resize", getParams());
 
-(0, _jquery2.default)(document).on("scroll", onScroll);
-
-var navItems = (0, _jquery2.default)(".nav li");
-var doc = document.getElementsByTagName("html")[0];
-function onScroll(e) {
-  var scrollPos = (0, _jquery2.default)(document).scrollTop();
-  // Move Nav
-  if (scrollPos > windowHeight) {
-    (0, _jquery2.default)(".nav").css({
-      transform: "translateY(" + (scrollPos - windowHeight) * navRatio + "px)"
+var navItems = $('.nav li');
+$('.section').viewportChecker({
+  classToAdd: 'active',
+  offset: halfWindow,
+  repeat: true,
+  callbackFunction: function callbackFunction(el) {
+    console.log($(el));
+    var elId = $(el).attr('id');
+    navItems.each(function () {
+      var navTarget = $(this).attr('data-target').substr(1);
+      if (navTarget == elId) {
+        $(this).addClass('active');
+      } else {
+        $(this).removeClass('active');
+      }
     });
   }
-  // Active States for Nav and Card
-  navItems.each(function () {
-    var currentLink = (0, _jquery2.default)(this);
-    var targetSection = (0, _jquery2.default)(currentLink.attr("data-target"));
-    var sectionTop = targetSection.position().top;
-    var halfWindow = Math.floor(windowHeight / 2);
-    if (sectionTop <= scrollPos + halfWindow
-    // sectionTop + targetSection.innerHeight() * 2 > scrollPos + halfWindow
-    ) {
-        (0, _jquery2.default)(".section").removeClass("active");
-        (0, _jquery2.default)(".nav li").removeClass("active");
-        currentLink.addClass("active");
-        targetSection.addClass("active");
-        var accentColor = (0, _jquery2.default)(currentLink.attr("data-target") + " .name p").css("background-color");
-        doc.setAttribute("style", "--accent-color:" + accentColor);
-      }
-  });
-}
+});
 
 // Scroll on click
-(0, _jquery2.default)(".nav li").on("click", function () {
-  var elTarget = (0, _jquery2.default)(this).attr("data-target");
-  var index = (0, _jquery2.default)(".nav li").index(this);
-  (0, _jquery2.default)("html, body").animate({
-    scrollTop: (0, _jquery2.default)(elTarget).offset().top
+$(".nav li").on("click", function () {
+  var elTarget = $(this).attr("data-target");
+  var index = $(".nav li").index(this);
+  $("html, body").animate({
+    scrollTop: $(elTarget).offset().top
   }, index * 200 + 500, 'swing');
 });
-(0, _jquery2.default)("#scroll-indicator").on("click", function () {
-  (0, _jquery2.default)("html, body").animate({
-    scrollTop: windowHeight
-  }, 500);
+$("#scroll-indicator").on("click", function () {
+  $("html, body").animate({ scrollTop: windowHeight }, 500);
 });
 (
-//   // Snowflake
+// Snowflake
 function () {
   var SNOW_COUNT = 100;
 
@@ -192,7 +212,7 @@ function () {
     }
 
     _createClass(Snowflake, [{
-      key: 'reset',
+      key: "reset",
       value: function reset() {
         this.x = Math.random() * width;
         this.y = Math.random() * -height;

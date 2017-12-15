@@ -1,4 +1,16 @@
-import $ from "jquery";
+import jQuery from "jquery";
+const $ = jQuery;
+
+/**
+ * jQuery-viewport-checker - v1.8.8 - 2017-09-25
+ * https://github.com/dirkgroenen/jQuery-viewport-checker
+ *
+ * Copyright (c) 2017 Dirk Groenen
+ * Licensed MIT <https://github.com/dirkgroenen/jQuery-viewport-checker/blob/master/LICENSE>
+ */
+
+!function(a){a.fn.viewportChecker=function(b){var c={classToAdd:"visible",classToRemove:"invisible",classToAddForFullView:"full-visible",removeClassAfterAnimation:!1,offset:100,repeat:!1,invertBottomOffset:!0,callbackFunction:function(a,b){},scrollHorizontal:!1,scrollBox:window};a.extend(c,b);var d=this,e={height:a(c.scrollBox).height(),width:a(c.scrollBox).width()};return this.checkElements=function(){var b,f;c.scrollHorizontal?(b=Math.max(a("html").scrollLeft(),a("body").scrollLeft(),a(window).scrollLeft()),f=b+e.width):(b=Math.max(a("html").scrollTop(),a("body").scrollTop(),a(window).scrollTop()),f=b+e.height),d.each(function(){var d=a(this),g={},h={};if(d.data("vp-add-class")&&(h.classToAdd=d.data("vp-add-class")),d.data("vp-remove-class")&&(h.classToRemove=d.data("vp-remove-class")),d.data("vp-add-class-full-view")&&(h.classToAddForFullView=d.data("vp-add-class-full-view")),d.data("vp-keep-add-class")&&(h.removeClassAfterAnimation=d.data("vp-remove-after-animation")),d.data("vp-offset")&&(h.offset=d.data("vp-offset")),d.data("vp-repeat")&&(h.repeat=d.data("vp-repeat")),d.data("vp-scrollHorizontal")&&(h.scrollHorizontal=d.data("vp-scrollHorizontal")),d.data("vp-invertBottomOffset")&&(h.scrollHorizontal=d.data("vp-invertBottomOffset")),a.extend(g,c),a.extend(g,h),!d.data("vp-animated")||g.repeat){String(g.offset).indexOf("%")>0&&(g.offset=parseInt(g.offset)/100*e.height);var i=g.scrollHorizontal?d.offset().left:d.offset().top,j=g.scrollHorizontal?i+d.width():i+d.height(),k=Math.round(i)+g.offset,l=g.scrollHorizontal?k+d.width():k+d.height();g.invertBottomOffset&&(l-=2*g.offset),k<f&&l>b?(d.removeClass(g.classToRemove),d.addClass(g.classToAdd),g.callbackFunction(d,"add"),j<=f&&i>=b?d.addClass(g.classToAddForFullView):d.removeClass(g.classToAddForFullView),d.data("vp-animated",!0),g.removeClassAfterAnimation&&d.one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",function(){d.removeClass(g.classToAdd)})):d.hasClass(g.classToAdd)&&g.repeat&&(d.removeClass(g.classToAdd+" "+g.classToAddForFullView),g.callbackFunction(d,"remove"),d.data("vp-animated",!1))}})},("ontouchstart"in window||"onmsgesturechange"in window)&&a(document).bind("touchmove MSPointerMove pointermove",this.checkElements),a(c.scrollBox).bind("load scroll",this.checkElements),a(window).resize(function(b){e={height:a(c.scrollBox).height(),width:a(c.scrollBox).width()},d.checkElements()}),this.checkElements(),this}}(jQuery);
+
 
 // Forget Scroll Position
 if ('scrollRestoration' in history) {
@@ -8,50 +20,36 @@ $(document).ready(function() {
   $("html, body").scrollTop(0);
 });
 
-let windowHeight, windowWidth, navHeight, docHeight, navRatio;
+let windowHeight, windowWidth, navHeight, docHeight, navRatio, halfWindow;
 const getParams = () => {
   windowHeight = $(window).height();
   windowWidth = $(window).width();
   navHeight = $('.nav').outerHeight();
   docHeight = $(document).outerHeight() - windowHeight;
   navRatio = navHeight / docHeight * -1;
+  halfWindow = Math.floor(windowHeight / 2);
 }
 getParams();
 $(document).on("resize", getParams());
 
-$(document).on("scroll", onScroll);
-
-const navItems = $(".nav li");
-const doc = document.getElementsByTagName("html")[0];
-function onScroll(e) {
-  const scrollPos = $(document).scrollTop();
-  // Move Nav
-  if (scrollPos > windowHeight) {
-    $(".nav").css({
-      transform: "translateY(" + (scrollPos - windowHeight) * navRatio + "px)"
+const navItems = $('.nav li');
+$('.section').viewportChecker({
+  classToAdd: 'active',
+  offset: halfWindow,
+  repeat:true,
+  callbackFunction: el => {
+    console.log($(el));
+    const elId = $(el).attr('id');
+    navItems.each(function() {
+      const navTarget = $(this).attr('data-target').substr(1);
+      if (navTarget == elId) {
+        $(this).addClass('active');
+      } else {
+        $(this).removeClass('active');
+    }
     });
   }
-  // Active States for Nav and Card
-  navItems.each(function() {
-    const currentLink = $(this);
-    const targetSection = $(currentLink.attr("data-target"));
-    const sectionTop = targetSection.position().top
-    const halfWindow = Math.floor(windowHeight / 2);
-    if (
-      sectionTop <= scrollPos + halfWindow
-      // sectionTop + targetSection.innerHeight() * 2 > scrollPos + halfWindow
-    ) {
-        $(".section").removeClass("active");
-        $(".nav li").removeClass("active");
-      currentLink.addClass("active");
-      targetSection.addClass("active");
-      const accentColor = $(currentLink.attr("data-target") + " .name p").css(
-        "background-color"
-      );
-      doc.setAttribute("style", "--accent-color:" + accentColor);
-    } 
-  });
-}
+});
 
 // Scroll on click
 $(".nav li").on("click", function() {
@@ -66,14 +64,11 @@ $(".nav li").on("click", function() {
 });
 $("#scroll-indicator").on("click", function() {
   $("html, body").animate(
-    {
-      scrollTop: windowHeight
-    },
-    500
+    { scrollTop: windowHeight }, 500
   );
 });
 (
-//   // Snowflake
+// Snowflake
   () => {
     const SNOW_COUNT = 100;
 

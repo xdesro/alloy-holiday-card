@@ -7,7 +7,7 @@
   align-items: center;
   z-index: 3;
   opacity: 0.2;
-  // transition: all .2s ease;
+  transition: all .3s ease;
   &.active {
     opacity: 1;
   }
