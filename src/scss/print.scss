@@ -1,0 +1,65 @@
+@import 'vendor/reset';
+@import 'partials/fonts';
+@import 'partials/variables';
+
+.oops, .navigation, .intro, .social, .info, #thanks {
+    display: none;
+}
+div {
+    box-sizing: border-box;
+}
+h1, h2, h3 { 
+    font-family: $serif;
+    font-weight: 900;
+}
+h3 {
+    line-height: 2;
+    font-weight: 800;
+}
+p, ul, ol, h1, h2, h3 {
+    color: #000 !important;
+}
+.section {
+    margin-bottom: 10px;
+    height: 50%;
+    page-break-inside: avoid;
+}
+.card {
+    border: 1px dashed black;
+    padding: 20px;
+    position: relative;
+    &:before {
+        content: url(/img/print-logo.png);
+        display: block;
+        width: 30%;
+        height: 100px;
+        float:right;
+        opacity: .2;
+    }
+    h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+}
+.name {
+    p {
+        font-size: 20px;
+        display: inline;
+    }
+    br {
+        display: none;
+    }
+}
+.story {
+    padding: 20px;
+    margin-top: -20px;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+.recipe {
+    columns: 2;
+    column-rule: 1px solid black;
+    p {
+        font-style: italic;
+    }
+}

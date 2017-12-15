@@ -49,13 +49,13 @@
   transition: all .4s ease;
   * {
     transition: all .2s ease;
-    transition-delay: .4s;
+    // transition-delay: .4s;
   }
   &.active {
     opacity: 1;
     .profile-img {
       opacity: 1;
-      transition-delay: .5s;
+      // transition-delay: .5s;
       transform: translateY(0px);
     }
     .recipe {
