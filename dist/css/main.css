@@ -312,6 +312,21 @@ ol {
     transition: all .1s ease; }
   .card.active {
     opacity: 1; }
+    .card.active .profile-img {
+      opacity: 1;
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px); }
+    .card.active .recipe {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+      transform: translateX(0); }
+    .card.active .story h1 {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px); }
+    .card.active .story p {
+      opacity: 1;
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px); }
   .card .info {
     grid-area: info;
     -webkit-transform: translateX(-100%);
@@ -345,7 +360,10 @@ ol {
       padding: 15px 10px 5px 10px; }
   .card .profile-img {
     margin-top: 25px;
-    grid-area: image; }
+    grid-area: image;
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px); }
     .card .profile-img img {
       height: 20rem; }
   .card .story {
@@ -353,11 +371,19 @@ ol {
     .card .story h1 {
       font-size: 2.7rem;
       font-weight: bold;
-      line-height: 40px; }
+      line-height: 40px;
+      -webkit-transform: translateY(200%);
+      transform: translateY(200%); }
     .card .story p {
+      opacity: 0;
+      -webkit-transform: translateY(50px);
+      transform: translateY(50px);
       font-size: 1.4rem;
       line-height: 1.5; }
   .card .recipe {
+    -webkit-transform: translateX(50px);
+    transform: translateX(50px);
+    opacity: 0;
     -webkit-transform-origin: 100% 50%;
     transform-origin: 100% 50%;
     background: #0A204C;
