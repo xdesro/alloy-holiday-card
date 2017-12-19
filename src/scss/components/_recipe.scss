@@ -43,7 +43,7 @@
     "info story"
     "info recipe";
   grid-template-rows: auto 1fr;
-  grid-template-columns: 11vw auto;
+  grid-template-columns: auto;
   opacity: .2;
   transition: all .1s ease;
   * {
@@ -71,7 +71,7 @@
   }
   .info {
     grid-area: info;
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
   .name {
     width: 0;
@@ -80,7 +80,7 @@
     position: relative;
     &:before {
       content: "";
-      background-image: url(/img/snow.svg);
+      background-image: url(/img/snow.png);
       background-size: contain;
       background-repeat: no-repeat;
       background-position: bottom left;
@@ -97,7 +97,7 @@
       font-weight: 900;
       font-family: $serif;
       font-size: calc(2.8vw + 1rem);
-      line-height: 1.6;
+      line-height: 1.5;
       display: inline;
       padding: 15px 10px 5px 10px;
     }

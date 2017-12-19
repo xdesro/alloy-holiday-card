@@ -303,7 +303,7 @@ ol {
   display: grid;
   grid-template-areas: "info story" "info recipe";
   grid-template-rows: auto 1fr;
-  grid-template-columns: 11vw auto;
+  grid-template-columns: auto;
   opacity: .2;
   -webkit-transition: all .1s ease;
   transition: all .1s ease; }
@@ -314,8 +314,8 @@ ol {
     opacity: 1; }
   .card .info {
     grid-area: info;
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%); }
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
   .card .name {
     width: 0;
     margin-top: 50px;
@@ -323,7 +323,7 @@ ol {
     position: relative; }
     .card .name:before {
       content: "";
-      background-image: url(/img/snow.svg);
+      background-image: url(/img/snow.png);
       background-size: contain;
       background-repeat: no-repeat;
       background-position: bottom left;
@@ -340,7 +340,7 @@ ol {
       font-weight: 900;
       font-family: "Butler", Garamond, Times New Roman, serif;
       font-size: calc(2.8vw + 1rem);
-      line-height: 1.6;
+      line-height: 1.5;
       display: inline;
       padding: 15px 10px 5px 10px; }
   .card .profile-img {
