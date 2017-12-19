@@ -44,7 +44,7 @@
     "info recipe";
   grid-template-rows: auto 1fr;
   grid-template-columns: 11vw auto;
-  opacity: .2;
+  // opacity: .2;
   transition: all .1s ease;
   * {
     transition: all .1s ease;
@@ -52,20 +52,20 @@
   &.active {
     opacity: 1;
     .profile-img {
-      opacity: 1;
-      transform: translateY(0px);
+      // opacity: 1;
+      // transform: translateY(0px);
     }
     .recipe {
-      opacity: 1;
-      transform: translateX(0);
+      // opacity: 1;
+      // transform: translateX(0);
     }
     .story {
       h1 {
-        transform: translateY(0px);
+        // transform: translateY(0px);
       }
       p {
-        opacity: 1;
-        transform: translateY(0px);
+        // opacity: 1;
+        // transform: translateY(0px);
       }
     }
   }
@@ -105,8 +105,8 @@
   .profile-img {
     margin-top: 25px;
     grid-area: image;
-    opacity: 0;
-    transform: translateY(50px);
+    // opacity: 0;
+    // transform: translateY(50px);
     img {
       height: 20rem;
     }
@@ -117,18 +117,18 @@
       font-size: 2.7rem;
       font-weight: bold;
       line-height: 40px;
-      transform: translateY(200%);
+      // transform: translateY(200%);
     }
     p {
-      opacity: 0;
-      transform: translateY(50px);
+      // opacity: 0;
+      // transform: translateY(50px);
       font-size: 1.4rem;
       line-height: 1.5;
     }
   }
   .recipe {
-    transform: translateX(50px);
-    opacity: 0;
+    // transform: translateX(50px);
+    // opacity: 0;
     transform-origin: 100% 50%;
     background: $downriver;
     overflow-y: scroll;
