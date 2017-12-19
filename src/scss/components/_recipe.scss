@@ -71,7 +71,7 @@
   }
   .info {
     grid-area: info;
-    transform: translateX(-50%);
+    transform: translateX(-150px);
   }
   .name {
     width: 0;
@@ -96,7 +96,7 @@
     p {
       font-weight: 900;
       font-family: $serif;
-      font-size: calc(2.8vw + 1rem);
+      font-size: 6rem;
       line-height: 1.5;
       display: inline;
       padding: 15px 10px 5px 10px;
